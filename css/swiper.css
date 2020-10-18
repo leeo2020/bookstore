@@ -1,0 +1,14 @@
+.swiper-container {
+      width: 556px;
+      height: 220px;
+      }
+
+.swiper-slide {
+  width: 556px;
+  height: 220px;
+      }
+
+.swiper-slide img {
+      width: 100%;
+      height: 100%;
+      }

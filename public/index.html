@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bookStore</title>
+    <link rel="stylesheet" href="../css/resetpc.css" type="text/css">
+    <link rel="stylesheet" href="../fonts/iconfont.css" type="text/css">
+    <link rel="stylesheet" href="../css/index.css" type="text/css">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css" type="text/css">
+    <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../js/cookieFunc.js"></script>
+    <script src="../js/ajaxFunc.js"></script>
+</head>
+
+<body>
+    <div class="nav-bar" id="navbar">
+        <ul>
+            <li><span id="huanYin">欢迎光临bookStore</span></li>
+            <li><a href="#">个人中心</a>
+                <div class="person">
+                    <ul>
+                        <li>登陆</li>
+                        <li>注册</li>
+                        <li>历史记录</li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="">我的购物车</a>
+                <div class="car">
+                    <ul>
+                        <li>我的宝贝</li>
+                        <li>我的关注</li>
+                        <li>我的书架</li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="">我的订单</a>
+                <div class="bill">
+                    <ul>
+                        <li>我的支付</li>
+                        <li>我的物流</li>
+                        <li>我的评价</li>
+                        <li>退货</li>
+                        <li>免费更换</li>
+                        <li>以旧换新</li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="">优惠活动</a>
+                <div class="promote">
+                    <ul>
+                        <li>季度优惠</li>
+                        <li>今日特惠</li>
+                        <li>会员优惠</li>
+                        <li>节日钜惠</li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="">客服</a></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="nav">
+        <form action="#" method="post">
+            <input type="text" id="booktext">
+            <input type="button" value="搜索" id="search">
+        </form>
+    </div>
+    <div class="main-body">
+        <div class="top">
+            <img src="../img/nav.jpg" alt="">
+        </div>
+        <div class="clearfix">
+            <div class="left">
+                <div class="first">
+                    <ul class="clearfix">
+                        <li><a href="#">书籍分类</a></li>
+                        <li><a href="#">言情/玄幻/游戏</a><span>&gt;</span></li>
+                        <li><a href="#">军事/武侠</a><span>&gt;</span></li>
+                        <li><a href="#">都市/校园/职场</a><span>&gt;</span></li>
+                        <li><a href="#">科幻/未来</a><span>&gt;</span></li>
+                        <li><a href="#">电影/音乐/文学</a><span>&gt;</span></li>
+                        <li><a href="#">历史/考古</a><span>&gt;</span></li>
+                        <li><a href="#">传记/传奇</a></li>
+                        <li><a href="#">战争/谋略</a></li>
+                        <li><a href="#">金融/货币</a><span>&gt;</span></li>
+                        <li><a href="#">财经/管理</a><span>&gt;</span></li>
+                        <li><a href="#">教育/励志</a></li>
+                        <li><a href="#">旅游/探险/野外求生</a><span>&gt;</span></li>
+                        <li><a href="#">工程/技术/编程</a><span>&gt;</span></li>
+                        <li><a href="#">恋爱/结婚/育儿</a><span>&gt;</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pop pop1">
+                <dl class="clearfix">
+                    <dt>童书</dt>
+                    <dd>凯迪克奖获奖作品</dd>
+                    <dd>纽伯瑞奖获奖作品</dd>
+                    <dd>高铁的秘密</dd>
+                    <dd>读专“鼠”于你的好绘本</dd>
+                    <dd>好想去这样那样的国家</dd>
+                    <dd>童心陶醉的幻想世界</dd>
+                    <dd>新宝驾到</dd>
+                    <dd>模范爸爸是什么样</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>文艺</dt>
+                    <dd>奥斯卡：原著比电影更精彩</dd>
+                    <dd>人民日报2020推荐书单</dd>
+                    <dd>2019年豆瓣年度书单</dd>
+                    <dd>易烊千玺荐书洞察人性！</dd>
+                    <dd>东野圭吾新书</dd>
+                    <dd>教育部推荐必读书目</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>社科</dt>
+                    <dd>历史类人气品牌 “甲骨文丛书”书单</dd>
+                    <dd>历史类精品“汗青堂丛书”书单</dd>
+                    <dd>译文纪实系列书单</dd>
+                    <dd>新知文库精选阅读丛书</dd>
+                    <dd>华文全球史系列书单</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>经管励志</dt>
+                    <dd>读懂2020中国经济书单</dd>
+                    <dd>比尔·盖茨推荐今夏必读5本书</dd>
+                    <dd>抓住股市投资机会</dd>
+                    <dd>瞬间提高个人修养的10部经典</dd>
+                    <dd>影视同期原著书单</dd>
+                    <dd>月薪不足3w你要读的书</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>生活</dt>
+                    <dd>生活有一种绝望，叫陪孩子写作业</dd>
+                    <dd>Lonely Planet2020世界旅行目的地榜单</dd>
+                    <dd>幼小衔接，孩子要上一年级，妈妈如何不焦虑？</dd>
+                    <dd>樊登推荐书单：家庭教育的秘密</dd>
+                    <dd>备孕需要了解的二三事</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>科技</dt>
+                    <dd>2020学习代码必读书单</dd>
+                    <dd>诺贝尔&普利策奖作者科普书单</dd>
+                    <dd>斯蒂芬·霍金图书全集</dd>
+                    <dd>"爱因斯坦-上帝是不掷骰子的”--量子物理学推荐书单</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>教育</dt>
+                    <dd>精明家长给孩子选好书</dd>
+                    <dd>一年级书单</dd>
+                    <dd>二年级书单</dd>
+                    <dd>三年级书单</dd>
+                    <dd>告诉你写好作文的秘密</dd>
+                    <dd>老师不会教的学习方法</dd>
+                    <dd>适合背诵的国学启蒙书</dd>
+                </dl>
+            </div>
+            <div class="center">
+                <div class="swiper-container swiper1">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="../img/lb1.jpg" alt="" /></div>
+                        <div class="swiper-slide"><img src="../img/lb2.jpg" alt="" /></div>
+                        <div class="swiper-slide"><img src="../img/lb3.jpg" alt="" /></div>
+                        <div class="swiper-slide"><img src="../img/lb4.jpg" alt="" /></div>
+                        <div class="swiper-slide"><img src="../img/lb5.jpg" alt="" /></div>
+                        <div class="swiper-slide"><img src="../img/lb6.jpg" alt="" /></div>
+                        <div class="swiper-slide"><img src="../img/lb7.jpg" alt="" /></div>
+                        <div class="swiper-slide"><img src="../img/lb8.jpg" alt="" /></div>
+                        <div class="swiper-slide"><img src="../img/lb9.jpg" alt="" /></div>
+                        <div class="swiper-slide"><img src="../img/lb10.jpg" alt="" /></div>
+                        <div class="swiper-slide"><img src="../img/lb11.jpg" alt="" /></div>
+                        <div class="swiper-slide"><img src="../img/lb12.jpg" alt="" /></div>
+                    </div>
+                    <!-- 如果需要分页器 -->
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="bookrack">
+                    <b>新</b>
+                    <h1>书上架</h1>
+                </div>
+                <div class="newbooks">
+                    <div class="swiper-container swiper2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <ul>
+                                    <li>
+                                        <img src="../img/11.jpg" alt="">
+                                        <h6>欢喜：冯唐2021金</h6>
+                                        <p>冯 唐</p>
+                                        <i><span>¥49.00</span> <span>¥98.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/12.jpg" alt="">
+                                        <h6>戴高乐将军（全二</h6>
+                                        <p>（英）朱利安.杰克</p>
+                                        <i><span>¥99.00</span> <span>¥198.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/13.jpg" alt="">
+                                        <h6>从新手到总监：行政</h6>
+                                        <p>胡郴龙、许烨 著</p>
+                                        <i><span>¥22.50</span> <span>¥45.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/14.jpg" alt="">
+                                        <h6>云深清浅时（东奔西</h6>
+                                        <p>东奔西顾 白马时光</p>
+                                        <i><span>¥45.4.00</span> <span>¥69.80</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/16.jpg" alt="">
+                                        <h6>欢喜：冯唐2021金</h6>
+                                        <p>冯 唐</p>
+                                        <i><span>¥49.00</span> <span>¥98.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/16.jpg" alt="">
+                                        <h6>戴高乐将军（全二</h6>
+                                        <p>（英）朱利安.杰克</p>
+                                        <i><span>¥99.00</span> <span>¥198.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/17.jpg" alt="">
+                                        <h6>从新手到总监：行政</h6>
+                                        <p>胡郴龙、许烨 著</p>
+                                        <i><span>¥22.50</span> <span>¥45.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/18.jpg" alt="">
+                                        <h6>云深清浅时（东奔西</h6>
+                                        <p>东奔西顾 白马时光</p>
+                                        <i><span>¥45.4.00</span> <span>¥69.80</span></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="swiper-slide">
+                                <ul>
+                                    <li>
+                                        <img src="../img/21.jpg" alt="">
+                                        <h6>欢喜：冯唐2021金</h6>
+                                        <p>冯 唐</p>
+                                        <i><span>¥49.00</span> <span>¥98.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/22.jpg" alt="">
+                                        <h6>戴高乐将军（全二</h6>
+                                        <p>（英）朱利安.杰克</p>
+                                        <i><span>¥99.00</span> <span>¥198.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/23.jpg" alt="">
+                                        <h6>从新手到总监：行政</h6>
+                                        <p>胡郴龙、许烨 著</p>
+                                        <i><span>¥22.50</span> <span>¥45.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/24.jpg" alt="">
+                                        <h6>云深清浅时（东奔西</h6>
+                                        <p>东奔西顾 白马时光</p>
+                                        <i><span>¥45.4.00</span> <span>¥69.80</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/25.jpg" alt="">
+                                        <h6>欢喜：冯唐2021金</h6>
+                                        <p>冯 唐</p>
+                                        <i><span>¥49.00</span> <span>¥98.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/26.jpg" alt="">
+                                        <h6>戴高乐将军（全二</h6>
+                                        <p>（英）朱利安.杰克</p>
+                                        <i><span>¥99.00</span> <span>¥198.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/27.jpg" alt="">
+                                        <h6>从新手到总监：行政</h6>
+                                        <p>胡郴龙、许烨 著</p>
+                                        <i><span>¥22.50</span> <span>¥45.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/28.jpg" alt="">
+                                        <h6>云深清浅时（东奔西</h6>
+                                        <p>东奔西顾 白马时光</p>
+                                        <i><span>¥45.4.00</span> <span>¥69.80</span></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="swiper-slide">
+                                <ul>
+                                    <li>
+                                        <img src="../img/31.png" alt="">
+                                        <h6>欢喜：冯唐2021金</h6>
+                                        <p>冯 唐</p>
+                                        <i><span>¥49.00</span> <span>¥98.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/32.jpg" alt="">
+                                        <h6>戴高乐将军（全二</h6>
+                                        <p>（英）朱利安.杰克</p>
+                                        <i><span>¥99.00</span> <span>¥198.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/33.jpg" alt="">
+                                        <h6>从新手到总监：行政</h6>
+                                        <p>胡郴龙、许烨 著</p>
+                                        <i><span>¥22.50</span> <span>¥45.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/34.jpg" alt="">
+                                        <h6>云深清浅时（东奔西</h6>
+                                        <p>东奔西顾 白马时光</p>
+                                        <i><span>¥45.4.00</span> <span>¥69.80</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/35.jpg" alt="">
+                                        <h6>欢喜：冯唐2021金</h6>
+                                        <p>冯 唐</p>
+                                        <i><span>¥49.00</span> <span>¥98.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/36.png" alt="">
+                                        <h6>戴高乐将军（全二</h6>
+                                        <p>（英）朱利安.杰克</p>
+                                        <i><span>¥99.00</span> <span>¥198.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/37.jpg" alt="">
+                                        <h6>从新手到总监：行政</h6>
+                                        <p>胡郴龙、许烨 著</p>
+                                        <i><span>¥22.50</span> <span>¥45.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/38.jpg" alt="">
+                                        <h6>云深清浅时（东奔西</h6>
+                                        <p>东奔西顾 白马时光</p>
+                                        <i><span>¥45.4.00</span> <span>¥69.80</span></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="swiper-slide">
+                                <ul>
+                                    <li>
+                                        <img src="../img/41.jpg" alt="">
+                                        <h6>欢喜：冯唐2021金</h6>
+                                        <p>冯 唐</p>
+                                        <i><span>¥49.00</span> <span>¥98.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/42.jpg" alt="">
+                                        <h6>戴高乐将军（全二</h6>
+                                        <p>（英）朱利安.杰克</p>
+                                        <i><span>¥99.00</span> <span>¥198.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/43.jpg" alt="">
+                                        <h6>从新手到总监：行政</h6>
+                                        <p>胡郴龙、许烨 著</p>
+                                        <i><span>¥22.50</span> <span>¥45.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/44.jpg" alt="">
+                                        <h6>云深清浅时（东奔西</h6>
+                                        <p>东奔西顾 白马时光</p>
+                                        <i><span>¥45.4.00</span> <span>¥69.80</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/45.jpg" alt="">
+                                        <h6>欢喜：冯唐2021金</h6>
+                                        <p>冯 唐</p>
+                                        <i><span>¥49.00</span> <span>¥98.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/46.jpg" alt="">
+                                        <h6>戴高乐将军（全二</h6>
+                                        <p>（英）朱利安.杰克</p>
+                                        <i><span>¥99.00</span> <span>¥198.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/47.jpg" alt="">
+                                        <h6>从新手到总监：行政</h6>
+                                        <p>胡郴龙、许烨 著</p>
+                                        <i><span>¥22.50</span> <span>¥45.00</span></i>
+                                    </li>
+                                    <li>
+                                        <img src="../img/48.jpg" alt="">
+                                        <h6>云深清浅时（东奔西</h6>
+                                        <p>东奔西顾 白马时光</p>
+                                        <i><span>¥45.4.00</span> <span>¥69.80</span></i>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="upper">
+                    <h4>最新动态</h4>
+                    <ul>
+                        <li><a href="#">万样童书,五折优惠</a></li>
+                        <li><a href="#">中小学教辅,满百八折</a></li>
+                        <li><a href="#">青春动漫,言情玄幻,尽享惠馈</a></li>
+                        <li><a href="#">资深会员,好书直送</a></li>
+                    </ul>
+                </div>
+                <div class="lower">
+                    <h4>新书预售<a href="">更多</a></h4>
+                    <div class="swiper-container swiper3">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="../img/n1.jpg" alt="">
+                                <div class="note">
+                                    <p>中国优秀典藏</p>
+                                    <p>现在优惠</p>
+                                    <p>￥99.9</p>
+                                    <p>￥199.8</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide"><img src="../img/n2.jpg" alt="">
+                                <div class="note">
+                                    <p>中国优秀典藏</p>
+                                    <p>现在优惠</p>
+                                    <p>￥99.9</p>
+                                    <p>￥199.8</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide"><img src="../img/n3.jpg" alt="">
+                                <div class="note">
+                                    <p>中国优秀典藏</p>
+                                    <p>现在优惠</p>
+                                    <p>￥99.9</p>
+                                    <p>￥199.8</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide"><img src="../img/n4.jpg" alt="">
+                                <div class="note">
+                                    <p>中国优秀典藏</p>
+                                    <p>现在优惠</p>
+                                    <p>￥99.9</p>
+                                    <p>￥199.8</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide"><img src="../img/n5.jpg" alt="">
+                                <div class="note">
+                                    <p>中国优秀典藏</p>
+                                    <p>现在优惠</p>
+                                    <p>￥99.9</p>
+                                    <p>￥199.8</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="bottom">
+                        <h2>新书热卖榜</h2>
+                        <ul class="clearfix">
+                            <li>总榜</li>
+                            <li>童书</li>
+                            <li>传记</li>
+                            <li>心理学</li>
+                            <li class="noright ">教辅</li>
+                        </ul>
+                        <dl class="clearfix ">
+                            <dd>
+                                <p class="goldsiver ">1</p>
+                                <p>解忧杂货店</p>
+                            </dd>
+                            <dd>
+                                <p class="goldsiver ">2</p>
+                                <p>暂坐</p>
+                            </dd>
+                            <dd>
+                                <p class="goldsiver ">3</p>
+                                <p>岛</p>
+                            </dd>
+                            <dd>
+                                <p>4</p>
+                                <p>长长的回廊</p>
+                            </dd>
+                            <dd>
+                                <p>5</p>
+                                <p>烟火漫卷</p>
+                            </dd>
+                            <dd>
+                                <p>6</p>
+                                <p>心理科医生</p>
+                            </dd>
+                            <dd>
+                                <p>7</p>
+                                <p>鸳鸯六七四</p>
+                            </dd>
+                            <dd>
+                                <p>8</p>
+                                <p>夜晚的潜水艇</p>
+                            </dd>
+                            <dd>
+                                <p>9</p>
+                                <p>给樱桃以性别</p>
+                            </dd>
+                            <dd>
+                                <p>10</p>
+                                <p>晚安，我亲爱的人</p>
+                            </dd>
+                            <a href="# ">查看更多榜单>></a>
+                        </dl>
+                        <ol>
+                            <li class="clearfix ">
+                                <div class="number ">
+                                    <p class="goldsilver ">1</p>
+                                </div>
+                                <div class="jpg ">
+                                    <img src="../img/l1.jpg " alt=" ">
+                                </div>
+                                <div class="txt ">
+                                    <p class="bookname "><a href="# ">不可思议的旅程三部曲</a></p>
+                                    <p class="price newprice ">￥99.90</p>
+                                    <p class="price oldprice ">￥199.80</p>
+                                    <p class="comment ">10条评论</p>
+                                </div>
+                            </li>
+                            <li class="clearfix ">
+                                <div class="number ">
+                                    <p class="goldsilver ">2</p>
+                                </div>
+                                <div class="jpg ">
+                                    <img src="../img/l2.jpg " alt=" ">
+                                </div>
+                                <div class="txt ">
+                                    <p class="bookname "><a href="# ">离开前请告诉我一声</a></p>
+                                    <p class="price newprice ">￥33.30</p>
+                                    <p class="price oldprice ">￥48.90</p>
+                                    <p class="comment ">25条评论</p>
+                                </div>
+                            </li>
+                            <li class="clearfix ">
+                                <div class="number ">
+                                    <p class="goldsilver ">3</p>
+                                </div>
+                                <div class="jpg ">
+                                    <img src="../img/l3.jpg " alt=" ">
+                                </div>
+                                <div class="txt ">
+                                    <p class="bookname "><a href="# ">梁实秋：可能这就是人生吧</a></p>
+                                    <p class="price newprice ">￥30.10</p>
+                                    <p class="price oldprice ">￥35.90</p>
+                                    <p class="comment ">12条评论</p>
+                                </div>
+                            </li>
+                            <li class="clearfix ">
+                                <div class="number ">
+                                    <p>4</p>
+                                </div>
+                                <div class="jpg ">
+                                    <img src="../img/l4.jpg " alt=" ">
+                                </div>
+                                <div class="txt ">
+                                    <p class="bookname "><a href="# ">笑猫日记——戴口罩的猫</a></p>
+                                    <p class="price newprice ">￥14.30</p>
+                                    <p class="price oldprice ">￥20.90</p>
+                                    <p class="comment ">12条评论</p>
+                                </div>
+                            </li>
+                            <li class="clearfix ">
+                                <div class="number ">
+                                    <p>5</p>
+                                </div>
+                                <div class="jpg ">
+                                    <img src="../img/l5.jpg " alt=" ">
+                                </div>
+                                <div class="txt ">
+                                    <p class="bookname "><a href="# ">为你自己读书</a></p>
+                                    <p class="price newprice ">￥19.90</p>
+                                    <p class="price oldprice ">￥39.80</p>
+                                    <p class="comment ">19条评论</p>
+                                </div>
+                            </li>
+                            <li class="clearfix ">
+                                <div class="number ">
+                                    <p>6</p>
+                                </div>
+                                <div class="jpg ">
+                                    <img src="../img/l6.jpg " alt=" ">
+                                </div>
+                                <div class="txt ">
+                                    <p class="bookname "><a href="# ">亲爱的小孩 和世界一起长大</a></p>
+                                    <p class="price newprice ">￥47.90</p>
+                                    <p class="price oldprice ">￥95.80</p>
+                                    <p class="comment ">9条评论</p>
+                                </div>
+                            </li>
+                            <li class="clearfix ">
+                                <div class="number ">
+                                    <p>7</p>
+                                </div>
+                                <div class="jpg ">
+                                    <img src="../img/l7.jpg " alt=" ">
+                                </div>
+                                <div class="txt ">
+                                    <p class="bookname "><a href="# ">给孩子的漫画科学史</a></p>
+                                    <p class="price newprice ">￥51.70</p>
+                                    <p class="price oldprice ">￥88.80</p>
+                                    <p class="comment ">21条评论</p>
+                                </div>
+                            </li>
+                            <li class="clearfix ">
+                                <div class="number ">
+                                    <p>8</p>
+                                </div>
+                                <div class="jpg ">
+                                    <img src="../img/l8.jpg " alt=" ">
+                                </div>
+                                <div class="txt ">
+                                    <p class="bookname "><a href="# ">东野圭吾：解忧杂货店</a></p>
+                                    <p class="price newprice ">￥40.70</p>
+                                    <p class="price oldprice ">￥59.80</p>
+                                    <p class="comment ">200031条评论</p>
+                                </div>
+                            </li>
+                            <li class="clearfix ">
+                                <div class="number ">
+                                    <p>9</p>
+                                </div>
+                                <div class="jpg ">
+                                    <img src="../img/l9.jpg " alt=" ">
+                                </div>
+                                <div class="txt ">
+                                    <p class="bookname "><a href="# ">烟火漫卷（迟子建新书)</a></p>
+                                    <p class="price newprice ">￥20.50</p>
+                                    <p class="price oldprice ">￥30.50</p>
+                                    <p class="comment ">11条评论</p>
+                                </div>
+                            </li>
+                            <li class="clearfix ">
+                                <div class="number ">
+                                    <p>10</p>
+                                </div>
+                                <div class="jpg ">
+                                    <img src="../img/l10.jpg " alt=" ">
+                                </div>
+                                <div class="txt ">
+                                    <p class="bookname "><a href="# ">暂坐（贾平凹)</a></p>
+                                    <p class="price newprice ">￥43.50</p>
+                                    <p class="price oldprice ">￥58.00</p>
+                                    <p class="comment ">11条评论</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="unique clearfix ">
+        <div class="left ">
+            <b>独</b>
+            <h1>家特供
+                <span class="firstone ">主打</span>
+                <span>童书1</span>
+                <span>童书2</span>
+                <span>文艺</span>
+                <span>小说</span>
+                <span>青春励志</span>
+                <span>社科</span>
+                <span>经管</span>
+                <span>生活</span>
+                <span>教育</span>
+                <span>电子书</span>
+            </h1>
+            <div class="list list1 ">
+                <ul class="clearfix ">
+                    <li class="leftdist ">
+                        <img src="../img/d1.jpg " alt=" ">
+                        <dl>
+                            <dt>高情商表达</dt>
+                            <dd>当当独家特供</dd>
+                            <dd><span>¥11.60</span><span class="rightfloat ">¥29.80</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d2.jpg " alt=" ">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix ">
+                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d3.jpg " alt=" ">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix ">
+                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d4.jpg " alt=" ">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix ">
+                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d5.jpg " alt=" ">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix ">
+                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li class="leftdist ">
+                        <img src="../img/d6.jpg " alt=" ">
+                        <dl>
+                            <dt>高情商表达</dt>
+                            <dd>当当独家特供</dd>
+                            <dd><span>¥11.60</span><span class="rightfloat ">¥29.80</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d7.jpg " alt=" ">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix ">
+                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d8.jpg " alt=" ">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix ">
+                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d9.jpg " alt=" ">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix ">
+                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d10.jpg " alt=" ">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix ">
+                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right ">
+            <div class="bottom ">
+                <h2>图书畅销榜</h2>
+                <ul class="clearfix ">
+                    <li>总榜</li>
+                    <li>童书</li>
+                    <li>传记</li>
+                    <li>心理学</li>
+                    <li class="noright ">教辅</li>
+                </ul>
+                <dl class="clearfix ">
+                    <dd>
+                        <p class="goldsiver ">1</p>
+                        <p>解忧杂货店</p>
+                    </dd>
+                    <dd>
+                        <p class="goldsiver ">2</p>
+                        <p>暂坐</p>
+                    </dd>
+                    <dd>
+                        <p class="goldsiver ">3</p>
+                        <p>岛</p>
+                    </dd>
+                    <dd>
+                        <p>4</p>
+                        <p>长长的回廊</p>
+                    </dd>
+                    <dd>
+                        <p>5</p>
+                        <p>烟火漫卷</p>
+                    </dd>
+                    <dd>
+                        <p>6</p>
+                        <p>心理科医生</p>
+                    </dd>
+                    <dd>
+                        <p>7</p>
+                        <p>鸳鸯六七四</p>
+                    </dd>
+                    <dd>
+                        <p>8</p>
+                        <p>夜晚的潜水艇</p>
+                    </dd>
+                    <dd>
+                        <p>9</p>
+                        <p>给樱桃以性别</p>
+                    </dd>
+                    <dd>
+                        <p>10</p>
+                        <p>晚安，我亲爱的人</p>
+                    </dd>
+                    <a href="# ">查看更多榜单>></a>
+                </dl>
+                <ol>
+                    <li class="clearfix ">
+                        <div class="number ">
+                            <p class="goldsilver ">1</p>
+                        </div>
+                        <div class="jpg ">
+                            <img src="../img/l1.jpg " alt=" ">
+                        </div>
+                        <div class="txt ">
+                            <p class="bookname "><a href="# ">不可思议的旅程三部曲</a></p>
+                            <p class="price newprice ">￥99.90</p>
+                            <p class="price oldprice ">￥199.80</p>
+                            <p class="comment ">10条评论</p>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="number ">
+                            <p class="goldsilver ">2</p>
+                        </div>
+                        <div class="jpg ">
+                            <img src="../img/l2.jpg " alt=" ">
+                        </div>
+                        <div class="txt ">
+                            <p class="bookname "><a href="# ">离开前请告诉我一声</a></p>
+                            <p class="price newprice ">￥33.30</p>
+                            <p class="price oldprice ">￥48.90</p>
+                            <p class="comment ">25条评论</p>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="number ">
+                            <p class="goldsilver ">3</p>
+                        </div>
+                        <div class="jpg ">
+                            <img src="../img/l3.jpg " alt=" ">
+                        </div>
+                        <div class="txt ">
+                            <p class="bookname "><a href="# ">梁实秋：可能这就是人生吧</a></p>
+                            <p class="price newprice ">￥30.10</p>
+                            <p class="price oldprice ">￥35.90</p>
+                            <p class="comment ">12条评论</p>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="number ">
+                            <p>4</p>
+                        </div>
+                        <div class="jpg ">
+                            <img src="../img/l4.jpg " alt=" ">
+                        </div>
+                        <div class="txt ">
+                            <p class="bookname "><a href="# ">笑猫日记——戴口罩的猫</a></p>
+                            <p class="price newprice ">￥14.30</p>
+                            <p class="price oldprice ">￥20.90</p>
+                            <p class="comment ">12条评论</p>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="number ">
+                            <p>5</p>
+                        </div>
+                        <div class="jpg ">
+                            <img src="../img/l5.jpg " alt=" ">
+                        </div>
+                        <div class="txt ">
+                            <p class="bookname "><a href="# ">为你自己读书</a></p>
+                            <p class="price newprice ">￥19.90</p>
+                            <p class="price oldprice ">￥39.80</p>
+                            <p class="comment ">19条评论</p>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="number ">
+                            <p>6</p>
+                        </div>
+                        <div class="jpg ">
+                            <img src="../img/l6.jpg " alt=" ">
+                        </div>
+                        <div class="txt ">
+                            <p class="bookname "><a href="# ">亲爱的小孩 和世界一起长大</a></p>
+                            <p class="price newprice ">￥47.90</p>
+                            <p class="price oldprice ">￥95.80</p>
+                            <p class="comment ">9条评论</p>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="number ">
+                            <p>7</p>
+                        </div>
+                        <div class="jpg ">
+                            <img src="../img/l7.jpg " alt=" ">
+                        </div>
+                        <div class="txt ">
+                            <p class="bookname "><a href="# ">给孩子的漫画科学史</a></p>
+                            <p class="price newprice ">￥51.70</p>
+                            <p class="price oldprice ">￥88.80</p>
+                            <p class="comment ">21条评论</p>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="number ">
+                            <p>8</p>
+                        </div>
+                        <div class="jpg ">
+                            <img src="../img/l8.jpg " alt=" ">
+                        </div>
+                        <div class="txt ">
+                            <p class="bookname "><a href="# ">东野圭吾：解忧杂货店</a></p>
+                            <p class="price newprice ">￥40.70</p>
+                            <p class="price oldprice ">￥59.80</p>
+                            <p class="comment ">200031条评论</p>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="number ">
+                            <p>9</p>
+                        </div>
+                        <div class="jpg ">
+                            <img src="../img/l9.jpg " alt=" ">
+                        </div>
+                        <div class="txt ">
+                            <p class="bookname "><a href="# ">烟火漫卷（迟子建新书)</a></p>
+                            <p class="price newprice ">￥20.50</p>
+                            <p class="price oldprice ">￥30.50</p>
+                            <p class="comment ">11条评论</p>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="number ">
+                            <p>10</p>
+                        </div>
+                        <div class="jpg ">
+                            <img src="../img/l10.jpg " alt=" ">
+                        </div>
+                        <div class="txt ">
+                            <p class="bookname "><a href="# ">暂坐（贾平凹)</a></p>
+                            <p class="price newprice ">￥43.50</p>
+                            <p class="price oldprice ">￥58.00</p>
+                            <p class="comment ">11条评论</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="package clearfix">
+        <a href="#"><img src="../img/p1.jpg" alt=""></a>
+        <a href="#"><img src="../img/p2.jpg" alt=""></a>
+        <a class="noright" href="#"><img src="../img/p3.jpg" alt=""></a>
+    </div>
+
+    <div class="author clearfix">
+        <div class="left clearfix">
+            <b>主</b>
+            <h1>编推荐
+                <span class="firstone">主打</span>
+                <span>童书1</span>
+                <span>童书2</span>
+                <span>文艺</span>
+                <span>小说</span>
+                <span>青春励志</span>
+                <span>社科</span>
+                <span>经管</span>
+                <span>生活</span>
+                <span>教育</span>
+                <span>电子书</span>
+            </h1>
+            <div class="list list1">
+                <ul class="clearfix">
+                    <li class="leftdist">
+                        <img src="../img/d1.jpg" alt="">
+                        <dl>
+                            <dt>高情商表达</dt>
+                            <dd>当当独家特供</dd>
+                            <dd><span>¥11.60</span><span class="rightfloat">¥29.80</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d2.jpg" alt="">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix">
+                                <span>¥21.60</span><span class="rightfloat">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d3.jpg" alt="">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix">
+                                <span>¥21.60</span><span class="rightfloat">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d4.jpg" alt="">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix">
+                                <span>¥21.60</span><span class="rightfloat">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d5.jpg" alt="">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix">
+                                <span>¥21.60</span><span class="rightfloat">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li class="leftdist">
+                        <img src="../img/d6.jpg" alt="">
+                        <dl>
+                            <dt>高情商表达</dt>
+                            <dd>当当独家特供</dd>
+                            <dd><span>¥11.60</span><span class="rightfloat">¥29.80</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d7.jpg" alt="">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix">
+                                <span>¥21.60</span><span class="rightfloat">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d8.jpg" alt="">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix">
+                                <span>¥21.60</span><span class="rightfloat">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d9.jpg" alt="">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix">
+                                <span>¥21.60</span><span class="rightfloat">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d10.jpg" alt="">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix">
+                                <span>¥21.60</span><span class="rightfloat">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <div class="bottom ">
+                <h2>电子书榜</h2>
+                <ul class="clearfix ">
+                    <li>总榜</li>
+                    <li>童书</li>
+                    <li>传记</li>
+                    <li>心理学</li>
+                    <li class="noright ">教辅</li>
+                </ul>
+                <dl class="clearfix ">
+                    <dd>
+                        <p class="goldsiver ">1</p>
+                        <p>解忧杂货店</p>
+                    </dd>
+                    <dd>
+                        <p class="goldsiver ">2</p>
+                        <p>暂坐</p>
+                    </dd>
+                    <dd>
+                        <p class="goldsiver ">3</p>
+                        <p>岛</p>
+                    </dd>
+                    <dd>
+                        <p>4</p>
+                        <p>长长的回廊</p>
+                    </dd>
+                    <dd>
+                        <p>5</p>
+                        <p>烟火漫卷</p>
+                    </dd>
+                    <dd>
+                        <p>6</p>
+                        <p>心理科医生</p>
+                    </dd>
+                    <dd>
+                        <p>7</p>
+                        <p>鸳鸯六七四</p>
+                    </dd>
+                    <dd>
+                        <p>8</p>
+                        <p>夜晚的潜水艇</p>
+                    </dd>
+                    <dd>
+                        <p>9</p>
+                        <p>给樱桃以性别</p>
+                    </dd>
+                    <dd>
+                        <p>10</p>
+                        <p>晚安，我亲爱的人</p>
+                    </dd>
+                    <a href="# ">查看更多榜单>></a>
+                </dl>
+                <ol>
+                    <li class="clearfix ">
+                        <div class="number ">
+                            <p class="goldsilver ">1</p>
+                        </div>
+                        <div class="jpg ">
+                            <img src="../img/l1.jpg " alt=" ">
+                        </div>
+                        <div class="txt ">
+                            <p class="bookname "><a href="# ">不可思议的旅程三部曲</a></p>
+                            <p class="price newprice ">￥99.90</p>
+                            <p class="price oldprice ">￥199.80</p>
+                            <p class="comment ">10条评论</p>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="number ">
+                            <p class="goldsilver ">2</p>
+                        </div>
+                        <div class="jpg ">
+                            <img src="../img/l2.jpg " alt=" ">
+                        </div>
+                        <div class="txt ">
+                            <p class="bookname "><a href="# ">离开前请告诉我一声</a></p>
+                            <p class="price newprice ">￥33.30</p>
+                            <p class="price oldprice ">￥48.90</p>
+                            <p class="comment ">25条评论</p>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="number ">
+                            <p class="goldsilver ">3</p>
+                        </div>
+                        <div class="jpg ">
+                            <img src="../img/l3.jpg " alt=" ">
+                        </div>
+                        <div class="txt ">
+                            <p class="bookname "><a href="# ">梁实秋：可能这就是人生吧</a></p>
+                            <p class="price newprice ">￥30.10</p>
+                            <p class="price oldprice ">￥35.90</p>
+                            <p class="comment ">12条评论</p>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="number ">
+                            <p>4</p>
+                        </div>
+                        <div class="jpg ">
+                            <img src="../img/l4.jpg " alt=" ">
+                        </div>
+                        <div class="txt ">
+                            <p class="bookname "><a href="# ">笑猫日记——戴口罩的猫</a></p>
+                            <p class="price newprice ">￥14.30</p>
+                            <p class="price oldprice ">￥20.90</p>
+                            <p class="comment ">12条评论</p>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="number ">
+                            <p>5</p>
+                        </div>
+                        <div class="jpg ">
+                            <img src="../img/l5.jpg " alt=" ">
+                        </div>
+                        <div class="txt ">
+                            <p class="bookname "><a href="# ">为你自己读书</a></p>
+                            <p class="price newprice ">￥19.90</p>
+                            <p class="price oldprice ">￥39.80</p>
+                            <p class="comment ">19条评论</p>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="number ">
+                            <p>6</p>
+                        </div>
+                        <div class="jpg ">
+                            <img src="../img/l6.jpg " alt=" ">
+                        </div>
+                        <div class="txt ">
+                            <p class="bookname "><a href="# ">亲爱的小孩 和世界一起长大</a></p>
+                            <p class="price newprice ">￥47.90</p>
+                            <p class="price oldprice ">￥95.80</p>
+                            <p class="comment ">9条评论</p>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="number ">
+                            <p>7</p>
+                        </div>
+                        <div class="jpg ">
+                            <img src="../img/l7.jpg " alt=" ">
+                        </div>
+                        <div class="txt ">
+                            <p class="bookname "><a href="# ">给孩子的漫画科学史</a></p>
+                            <p class="price newprice ">￥51.70</p>
+                            <p class="price oldprice ">￥88.80</p>
+                            <p class="comment ">21条评论</p>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="number ">
+                            <p>8</p>
+                        </div>
+                        <div class="jpg ">
+                            <img src="../img/l8.jpg " alt=" ">
+                        </div>
+                        <div class="txt ">
+                            <p class="bookname "><a href="# ">东野圭吾：解忧杂货店</a></p>
+                            <p class="price newprice ">￥40.70</p>
+                            <p class="price oldprice ">￥59.80</p>
+                            <p class="comment ">200031条评论</p>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="number ">
+                            <p>9</p>
+                        </div>
+                        <div class="jpg ">
+                            <img src="../img/l9.jpg " alt=" ">
+                        </div>
+                        <div class="txt ">
+                            <p class="bookname "><a href="# ">烟火漫卷（迟子建新书)</a></p>
+                            <p class="price newprice ">￥20.50</p>
+                            <p class="price oldprice ">￥30.50</p>
+                            <p class="comment ">11条评论</p>
+                        </div>
+                    </li>
+                    <li class="clearfix ">
+                        <div class="number ">
+                            <p>10</p>
+                        </div>
+                        <div class="jpg ">
+                            <img src="../img/l10.jpg " alt=" ">
+                        </div>
+                        <div class="txt ">
+                            <p class="bookname "><a href="# ">暂坐（贾平凹)</a></p>
+                            <p class="price newprice ">￥43.50</p>
+                            <p class="price oldprice ">￥58.00</p>
+                            <p class="comment ">11条评论</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- tab -->
+    <div class="tabThree clearfix ">
+        <div class="left ">
+            <div class="nav clearfix ">
+                <ul>
+                    <li>热门作者</li>
+                    <li>名人堂</li>
+                    <li>新锐作家</li>
+                </ul>
+            </div>
+            <div class="content ">
+                <ol>
+                    <li class="first ">
+                        <div class="top clearfix">
+                            <span><h1>1</h1>st</span>
+                            <a href="# "><img src="../img/a1.jpg " alt=" "></a>
+                            <div>
+                                <h2>马家辉</h2>
+                                <p>1963年生于香港湾仔，美国芝加哥大学社会科学硕士、威斯康辛大学社会学博士，知名作家、传媒人、文化评论学者。著有随笔集《江湖有事》《关于岁月的隐密情事》《死在这里也不错》《大叔》《小妹》等。2016年出版首部长篇小说《龙头凤尾》,获得二十多项文学大奖肯定，包括《亚洲周刊》年度十大小说、《南方周末》文化原创榜年度好书虚构类榜首、香港书奖、华语文学传媒大奖年度小说家</p>
+                            </div>
+                        </div>
+                        <div class="low">
+                            <div class="zz">
+                                <h2 id="zz">作者</h2>
+                                <div>
+                                    <div class="line"></div>
+                                </div>
+                            </div>
+                            <ul class="opus clearfix">
+                                <li>
+                                    <img src="../img/a11.jpg" alt="">
+                                    <dl>
+                                        <dt>鸳鸯六七四</dt>
+                                        <dd class="calligraphy"><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i></dd>
+                                        <dd class="two-price clearfix">
+                                            <p>¥59.00</p><span>¥59.00</span></dd>
+                                        <dd class="e-price">电子书￥26.99</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/a12.jpg" alt="">
+                                    <dl>
+                                        <dt>龙头凤尾</dt>
+                                        <dd class="calligraphy"><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i></dd>
+                                        <dd class="two-price clearfix">
+                                            <p>¥59.00</p><span>¥59.00</span></dd>
+                                        <dd class="e-price">电子书￥26.99</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/a13.jpg" alt="">
+                                    <dl>
+                                        <dt>马家辉行散记</dt>
+                                        <dd class="calligraphy"><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i></dd>
+                                        <dd class="two-price clearfix">
+                                            <p>¥59.00</p><span>¥59.00</span></dd>
+                                        <dd class="e-price">电子书￥26.99</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/a14.png" alt="">
+                                    <dl>
+                                        <dt>马家辉行散记</dt>
+                                        <dd class="calligraphy"><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i></dd>
+                                        <dd class="two-price clearfix">
+                                            <p>¥59.00</p><span>¥59.00</span></dd>
+                                        <dd class="e-price">电子书￥26.99</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="aside ">
+                            <ul>
+                                <li><a href="#"><b>1</b><span>余华   </span></a></li>
+                                <li><a href="#"><b>2</b><span>郑渊洁 </span></a></li>
+                                <li><a href="#"><b>3</b><span>余秋雨 </span></a></li>
+                                <li><a href="#"><b>4</b><span>曹文轩 </span></a></li>
+                                <li><a href="#"><b>5</b><span>莫言   </span></a></li>
+                                <li><a href="#"><b>6</b><span>村上春树</span></a></li>
+                                <li><a href="#"><b>7</b><span>东野圭吾</span></a></li>
+                                <li><a href="#"><b>8</b><span>大冰   </span></a></li>
+                                <li><a href="#"><b>9</b><span>张嘉佳 </span></a></li>
+                                <li><a class="last" href="#"><b>10</b><span>沈石溪</span></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="second clearfix">
+                        <div class="left">
+                            <div>
+                                <img src="../img/a2.jpg" alt="">
+                            </div>
+                            <dl>
+                                <dt>冯唐</dt>
+                                <dd>
+                                    <p>冯唐，1971年生于北京，诗人、作家、古器物爱好者。一个热爱文艺的管理专家，一个精通麦肯锡工作法的古器物爱好者，一个医学博士出身的投资人。</p>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right">
+                            <div class="top clearfix">
+                                <div class="picture">
+                                    <a href="#"><img src="../img/a22.jpg" alt=""></a>
+                                </div>
+                                <div class="txt">
+                                    <dl>
+                                        <dt>
+                                            <a href="">欢喜：冯唐2021金句日历（全面升级！冯唐全新语录+网红老妈幽默段子，特收录冯唐24节气书法）</a>
+                                        </dt>
+                                        <dd>
+                                            <i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i>
+                                        </dd>
+                                        <dd class="clearfix">
+                                            <b>¥59.00</b><span>¥59.00</span>
+                                        </dd>
+                                        <dd>
+                                            <p>
+                                                《欢喜：冯唐2021金句日历》继2020金句日历之后全面升级，全新冯唐走心实用金句，首次收录网络超人气大飒蜜、冯唐老妈的快人快语、幽默段子。周一到周五读冯唐金句，认真做喜欢的事儿，认真做个有聊的人；周六日看冯唐老妈语录、段子，感受另一番诙
+                                            </p>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="low">
+                                <ul>
+                                    <li>
+                                        <p><span>该作者的其他作品：</span>
+                                            <a href="#">
+                                            青菀说</a></p>
+                                    </li>
+                                    <li>
+                                        <p><span>该作者推荐的图书：</span>
+                                            <a href="#">《你当像鸟飞往你的山》</a>
+                                            <a href="#">《明朝那些事儿全集》</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span>喜欢该作者还喜欢：</span>
+                                            <a href="#">《平凡的世界》</a>
+                                            <a href="#">《明朝那些事儿全集》</a>
+                                            <a href="#">《流浪地球-电影制作手记》</a>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="third clearfix">
+                        <div class="left">
+                            <div>
+                                <img src="../img/a3.jpg" alt="">
+                            </div>
+                            <dl>
+                                <dt>冯唐</dt>
+                                <dd>
+                                    <p>冯唐，1971年生于北京，诗人、作家、古器物爱好者。一个热爱文艺的管理专家，一个精通麦肯锡工作法的古器物爱好者，一个医学博士出身的投资人。</p>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="right">
+                            <div class="top clearfix">
+                                <div class="picture">
+                                    <a href="#"><img src="../img/a33.jpg" alt=""></a>
+                                </div>
+                                <div class="txt">
+                                    <dl>
+                                        <dt>
+                                            <a href="">欢喜：冯唐2021金句日历（全面升级！冯唐全新语录+网红老妈幽默段子，特收录冯唐24节气书法）</a>
+                                        </dt>
+                                        <dd>
+                                            <i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i>
+                                        </dd>
+                                        <dd class="clearfix">
+                                            <b>¥59.00</b><span>¥59.00</span>
+                                        </dd>
+                                        <dd>
+                                            <p>
+                                                《欢喜：冯唐2021金句日历》继2020金句日历之后全面升级，全新冯唐走心实用金句，首次收录网络超人气大飒蜜、冯唐老妈的快人快语、幽默段子。周一到周五读冯唐金句，认真做喜欢的事儿，认真做个有聊的人；周六日看冯唐老妈语录、段子，感受另一番诙
+                                            </p>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="low">
+                                <ul>
+                                    <li>
+                                        <p><span>该作者的其他作品：</span>
+                                            <a href="#">
+                                            青菀说</a></p>
+                                    </li>
+                                    <li>
+                                        <p><span>该作者推荐的图书：</span>
+                                            <a href="#">《你当像鸟飞往你的山》</a>
+                                            <a href="#">《明朝那些事儿全集》</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span>喜欢该作者还喜欢：</span>
+                                            <a href="#">《平凡的世界》</a>
+                                            <a href="#">《明朝那些事儿全集》</a>
+                                            <a href="#">《流浪地球-电影制作手记》</a>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                </ol>
+            </div>
+        </div>
+        <div class="right ">
+            <ul class="clearfix">
+                <li>
+                    <a href="#"><img src="../img/t1.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/t2.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/t3.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/t4.jpg" alt=""></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="package clearfix">
+        <a href="#"><img src="../img/p4.jpg" alt=""></a>
+        <a href="#"><img src="../img/p5.jpg" alt=""></a>
+        <a class="noright" href="#"><img src="../img/p6.jpg" alt=""></a>
+    </div>
+
+    <!-- guess you like -->
+    <div class="guess ">
+      <div class="nav-bar">
+        <b>猜</b>
+        <h1>你喜欢
+            <a href=""><i class="iconfont">&#xe646;换一批</i></a>
+        </h1>
+      </div>
+      <div clearfix >
+        <div class="left ">
+            <div class="list list1 ">
+                <ul class="clearfix ">
+                    <li class="leftdist ">
+                        <img src="../img/d1.jpg " alt=" ">
+                        <dl>
+                            <dt>高情商表达</dt>
+                            <dd>当当独家特供</dd>
+                            <dd><span>¥11.60</span><span class="rightfloat ">¥29.80</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d2.jpg " alt=" ">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix ">
+                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d3.jpg " alt=" ">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix ">
+                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d4.jpg " alt=" ">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix ">
+                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d5.jpg " alt=" ">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix ">
+                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li class="leftdist ">
+                        <img src="../img/d6.jpg " alt=" ">
+                        <dl>
+                            <dt>高情商表达</dt>
+                            <dd>当当独家特供</dd>
+                            <dd><span>¥11.60</span><span class="rightfloat ">¥29.80</span></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d7.jpg " alt=" ">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix ">
+                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d8.jpg " alt=" ">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix ">
+                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d9.jpg " alt=" ">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix ">
+                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="../img/d10.jpg " alt=" ">
+                        <dl>
+                            <dt>唐诗里的烟火人间</dt>
+                            <dd>当当独家特供</dd>
+                            <dd class="clearfix ">
+                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                            <dd>电子书￥24.00</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right ">
+            <h2>你可能喜欢的作家</h2>
+            <ul class="clearfix">
+                <li>余华 </li>
+                <li>路遥 </li>
+                <li>村上春</li>
+                <li>赵伟 </li>
+                <li>德鲁克</li>
+                <li>稻盛和</li>
+                <li>东野圭</li>
+                <li>沃森 </li>
+                <li>南派三</li>
+                <li>何马 </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    <div class="reader clearfix ">
+        <div class="left ">
+            <b>独</b>
+            <h1>家特供
+                <span class="firstone ">主打</span>
+                <span>童书1</span>
+                <span>童书2</span>
+                <span>文艺</span>
+                <span>小说</span>
+                <span>青春励志</span>
+                <span>社科</span>
+                <span>经管</span>
+                <span>生活</span>
+                <span>教育</span>
+                <span>电子书</span>
+            </h1>
+            </div>
+       </div>
+
+
+
+
+    <script src="../js/index.js "></script>
+</body>
+
+</html>
