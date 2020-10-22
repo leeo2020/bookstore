@@ -25,7 +25,7 @@ const sassHandle=()=>{
 const htmlHandle=()=>{
 	return gulp.src('./public/*.html')
 		.pipe(htmlmin({
-			'collapseWhiteSpace':true,
+			'collapseWhitespace':true,
 			'removeAttributeQuotes':true,
 			'collapseBooleanAttributes':true,
 			'removeComments':true,
