@@ -22,6 +22,12 @@
     border-right: 1px solid #999;
 }
 
+.nav-bar>ul>li #account {
+    padding: 5px;
+    font-size: 14px;
+    color: crimson;
+}
+
 .nav-bar>ul>li:nth-child(6) {
     border: none;
     padding-right: 5px;

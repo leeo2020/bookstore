@@ -1,4 +1,26 @@
+window.onload = function() {
+    $.ajax({
+        url: "../admin/showtemp.php",
+        dataType: 'json',
+        success: function(res) {
+            if (res.code == 1) {
+                $('#small').attr('src', res.data[0]['product_img']);
+                $('big').attr('src', res.data[0]['product_img']);
+                $('#car').attr('index', res.data[0]['product_id']);
+                $('#bookname').html(res.data[0]['product_name']);
+                $('#price').html(res.data[0]['product_price'])
+                console.log($('#small').attr('src'), $('#bookname').html())
+            }
+        }
+    })
+}
+
 //跳转详情界面
+var welcom = document.getElementById("account");
+if (getCookie("用户名")) {
+    welcom.innerHTML = getCookie("用户名");
+}
+
 var person = document.getElementsByClassName('person')[0];
 var ulPerson = person.querySelector('ul')
     //跳转到登陆、注册页面
@@ -70,7 +92,6 @@ $('#putCar').click(() => {
     let price = $('#price').html()
     let bkImg = $('#img').attr('src');
     $('#amount').val(num);
-    console.log(getCookie(bkName))
     $.ajax({
         url: "../admin/addwq.php",
         data: `id=${bkId}&name=${bkName}&img=${bkImg}&price=${price}&num=${num}`,

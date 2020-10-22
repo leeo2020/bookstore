@@ -51,7 +51,7 @@ btn.onclick = function() {
                 setCookie("用户名", username, 10 * 24 * 3600);
                 localStorage.setItem("用户名", username);
             } else {
-                setCookie("用户名", username, 60);
+                setCookie("用户名", username, 1800);
             }
         } else {
             clearTimeout(timerid)

@@ -374,9 +374,21 @@ function mKill() {
 //render详情页面
 $('#detail').click(function(event) {
     if (event.target.nodeName === "IMG") {
+        let bkImg = $(event.target).attr('src')
         let li = $(event.target).parent()
         let div = $(event.target).parent().parent().parent()
-        let bookId = Number(String($(div).index()) + String($(li).index()))
+        let bkId = Number(String($(div).index()) + String($(li).index()))
+        let bkName = $(li).children('h6').children('span').html()
+        let price = $(li).children('i').children('span').html()
+        let num = 1;
+        $.ajax({
+            url: "../admin/addtemp.php",
+            data: `id=${bkId}&name=${bkName}&img=${bkImg}&price=${price}&num=${num}`,
+            dataType: 'json',
+            success: function(res) {
+                window.location.href = "./details.html"
+            }
+        })
     }
 })
 
