@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "13950032",
+      "name": "上拉三角细 ",
+      "font_class": "shanglasanjiaoxi",
+      "unicode": "e85b",
+      "unicode_decimal": 59483
+    },
+    {
       "icon_id": "8094188",
       "name": "改善:更换",
       "font_class": "gaishangenghuan",

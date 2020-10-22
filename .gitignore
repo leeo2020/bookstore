@@ -1,2 +1,5 @@
-node_modules
-img
+node_modules/
+.idea/
+.vscode/
+dist/
+nginx.htaccess

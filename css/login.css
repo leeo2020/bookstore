@@ -6,31 +6,32 @@
 
 h1 {
     text-align: center;
-    margin-bottom:35px;
+    margin-bottom: 15px;
 }
 
-.imgs{
-  margin: 0 auto;
-  width: 834px;
-  height: 220px;
-  border: 1px solid lightcyan;
-  position: relative;
-  overflow: hidden;
+.imgs {
+    margin: 0 auto;
+    width: 834px;
+    height: 220px;
+    border: 1px solid lightcyan;
+    position: relative;
+    overflow: hidden;
 }
+
 .imgs ul {
-    width:2224px;
+    width: 2224px;
     height: 220px;
     position: absolute;
     top: 0;
     left: 0;
-       }
+}
 
 .imgs ul li {
     list-style-type: none;
     width: 139px;
     height: 220px;
     float: left;
-       }
+}
 
 ul li img {
     vertical-align: middle;
@@ -39,29 +40,47 @@ ul li img {
 form {
     text-align: center;
     margin-top: 25px;
+    font-size: 14px;
 }
 
-form #nameTxt,form #pwdTxt {
+form #nameTxt,
+form #pwdTxt {
     margin: 8px;
     width: 125px;
+    height: 30px;
+    border-radius: 8px;
+    outline: none;
+    line-height: 30px;
+    font-size: 16px;
+    text-indent: 1em;
 }
+
 form #btn {
     margin: 8px;
     width: 80px;
+    height: 35px;
     font-size: 16px;
     letter-spacing: 0.5em;
     text-align: center;
+    border-radius: 6px;
+    outline: none;
 }
-.msg{
-  width:300px;
-  height:200px;
-  line-height: 36px;
-  font-size: 24px;
-  background-color: lightcyan;
-  position: absolute;
-  text-indent: 2em;
-  top:300px;
-  right:150px;
-  display:none;
-  border:2px solid coral;
+
+form span {
+    text-align: center;
+    font-size: 14px;
+}
+
+.msg {
+    width: 300px;
+    height: 200px;
+    line-height: 36px;
+    font-size: 24px;
+    background-color: lightcyan;
+    position: absolute;
+    text-indent: 2em;
+    top: 300px;
+    right: 150px;
+    display: none;
+    border: 2px solid coral;
 }

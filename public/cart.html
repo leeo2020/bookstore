@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <link rel="stylesheet" href="../css/resetpc.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <script src="../lib/jquery.min.js"></script>
+    <script src="../js/cookieFunc.js"></script>
+</head>
+
+<body>
+    <div class="nav-bar" id="navbar">
+        <ul>
+            <li><span id="huanYin"><b id="account"></b>欢迎光临bookStore</span></li>
+            <li><a href="#">个人中心</a>
+                <div class="person">
+                    <ul>
+                        <li>登陆</li>
+                        <li>注册</li>
+                        <li>历史记录</li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="">我的购物车</a>
+                <div class="car">
+                    <ul>
+                        <li>我的宝贝</li>
+                        <li>我的关注</li>
+                        <li>我的书架</li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="">我的订单</a>
+                <div class="bill">
+                    <ul>
+                        <li>我的支付</li>
+                        <li>我的物流</li>
+                        <li>我的评价</li>
+                        <li>退货</li>
+                        <li>免费更换</li>
+                        <li>以旧换新</li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="">优惠活动</a>
+                <div class="promote">
+                    <ul>
+                        <li>季度优惠</li>
+                        <li>今日特惠</li>
+                        <li>会员优惠</li>
+                        <li>节日钜惠</li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="">客服</a></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="bannerf">
+        <div class="banner">
+            <div class="img"><img src="../img/dd.gif" alt=""></div>
+            <form action="#" method="post" class="clearfix">
+                <input type="text" id="booktext">
+                <input type="button" value="搜索" id="search">
+            </form>
+            <ul clear="clearfix">
+                <li>
+                    <a href="#"></a>热搜:</li>
+                <li>
+                    <a href="#"></a>西方博弈往事</li>
+                <li>
+                    <a href="#"></a>3-6岁经典绘本</li>
+                <li>
+                    <a href="#"></a>独木舟新书</li>
+                <li>
+                    <a href="#"></a>四大名著</li>
+                <li>
+                    <a href="#"></a>健康日历2021</li>
+                <li>
+                    <a href="#"></a>高级搜索</li>
+            </ul>
+            <div class="cart clearfix"><a href="#">购物车</a><a class="last" href="#">我的订单</a></div>
+            <div class="list">
+                <ul class="clearfix">
+                    <li>
+                        <a href="#"></a>全部商品分类</li>
+                    <li>
+                        <a href="#"></a>图书</li>
+                    <li>
+                        <a href="#"></a>电子书</li>
+                    <li>
+                        <a href="#"></a>网络文学</li>
+                    <li>
+                        <a href="#"></a>服装</li>
+                    <li>
+                        <a href="#"></a>运动户外</li>
+                    <li>
+                        <a href="#"></a>孕婴童</li>
+                    <li>
+                        <a href="#"></a>家居</li>
+                    <li>
+                        <a href="#"></a>当当优品</li>
+                    <li>
+                        <a href="#"></a>食品</li>
+                    <li>
+                        <a href="#"></a>Apple</li>
+                    <li>
+                        <a href="#"></a>电器城</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <img src="../img/dt1.jpg" alt="">
+    </div>
+    <div class="main-body">
+        <div class="empty" id="empty">
+            <h2>你的购物车是空的</h2>
+            <p>
+                <a href="javascript:;">你可以去逛逛</a>
+            </p>
+        </div>
+        <div class="good" id="good">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="hide" id="hide" height="40px">id </th>
+                        <th height="40px">品名</th>
+                        <th class="img" id="img" height="40px">图片</th>
+                        <th height="40px">数量</th>
+                        <th height="40px">价格</th>
+                        <th height="40px">操作</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr class="kong">
+                        <td class="hide"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="hide" id="id">1</td>
+                        <td id="name">欢喜</td>
+                        <td id="img"><img src="../img/dt2.jpg" alt=""></td>
+                        <td class="operate clearfix">
+                            <label><input class="addSub" id="add" type="radio" name="num" value="+">+</label>
+                            <span id="number">1</span>
+                            <label><input class="addSub" id="sub" type="radio" name="num" value="-">-</label>
+                        </td>
+                        <td id="price"><span>29.00</span></td>
+                        <td id="del"><span>删除</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- <ul class="clearfix">
+            <li>id</li>
+            <li>品名</li>
+            <li>图片</li>
+            <li>数量</li>
+            <li>价格</li>
+            <li>操作</li>
+        </ul>
+        <ol class="clearfix">
+            <li>1</li>
+            <li>欢喜</li>
+            <li><img src="../img/dt2.jpg" alt=""></li>
+            <li>
+                <label><input type="radio" name="num" value="+">+</label>
+                <span id="number">1</span>
+                <label><input type="radio" name="num" value="-">-</label>
+            </li>
+            <li><span>29.00</span></li>
+            <li><span>删除</span></li>
+        </ol> -->
+        </div>
+    </div>
+    <script src="../js/cart.js"></script>
+</body>
+
+</html>

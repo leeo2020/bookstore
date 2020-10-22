@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="../fonts/iconfont.css" type="text/css">
     <link rel="stylesheet" href="../css/index.css" type="text/css">
     <link rel="stylesheet" href="../css/swiper-bundle.min.css" type="text/css">
-    <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../lib/jquery.min.js"></script>
+    <script src="../lib/swiper-bundle.min.js"></script>
     <script src="../js/cookieFunc.js"></script>
     <script src="../js/ajaxFunc.js"></script>
 </head>
@@ -17,7 +18,7 @@
 <body>
     <div class="nav-bar" id="navbar">
         <ul>
-            <li><span id="huanYin">欢迎光临bookStore</span></li>
+            <li><span id="huanYin"><b id="account"></b>欢迎光临bookStore</span></li>
             <li><a href="#">个人中心</a>
                 <div class="person">
                     <ul>
@@ -62,41 +63,380 @@
             <li></li>
         </ul>
     </div>
-    <div class="nav">
-        <form action="#" method="post">
-            <input type="text" id="booktext">
-            <input type="button" value="搜索" id="search">
-        </form>
+
+    <div class="bannerf">
+        <div class="banner">
+            <div class="img"><img src="../img/dd.gif" alt=""></div>
+            <form action="#" method="post" class="clearfix">
+                <input type="text" id="booktext">
+                <input type="button" value="搜索" id="search">
+            </form>
+            <ul clear="clearfix">
+                <li>
+                    <a href="#"></a>热搜:</li>
+                <li>
+                    <a href="#"></a>西方博弈往事</li>
+                <li>
+                    <a href="#"></a>3-6岁经典绘本</li>
+                <li>
+                    <a href="#"></a>独木舟新书</li>
+                <li>
+                    <a href="#"></a>四大名著</li>
+                <li>
+                    <a href="#"></a>健康日历2021</li>
+                <li>
+                    <a href="#"></a>高级搜索</li>
+            </ul>
+            <div class="cart clearfix"><a id="shoppingCar" script="javascript:;">购物车</a><a class="last" script="javascript:;">我的订单</a></div>
+            <div class="list">
+                <ul class="clearfix">
+                    <li class="goodList" id="goodList">
+                        <a href="#"></a>全部商品分类</li>
+                    <li>
+                        <a href="#"></a>图书</li>
+                    <li>
+                        <a href="#"></a>电子书</li>
+                    <li>
+                        <a href="#"></a>网络文学</li>
+                    <li>
+                        <a href="#"></a>服装</li>
+                    <li>
+                        <a href="#"></a>运动户外</li>
+                    <li>
+                        <a href="#"></a>孕婴童</li>
+                    <li>
+                        <a href="#"></a>家居</li>
+                    <li>
+                        <a href="#"></a>当当优品</li>
+                    <li>
+                        <a href="#"></a>食品</li>
+                    <li>
+                        <a href="#"></a>Apple</li>
+                    <li>
+                        <a href="#"></a>电器城</li>
+                </ul>
+            </div>
+        </div>
     </div>
+
     <div class="main-body">
         <div class="top">
             <img src="../img/nav.jpg" alt="">
         </div>
         <div class="clearfix">
             <div class="left">
-                <div class="first">
-                    <ul class="clearfix">
-                        <li><a href="#">书籍分类</a></li>
-                        <li><a href="#">言情/玄幻/游戏</a><span>&gt;</span></li>
-                        <li><a href="#">军事/武侠</a><span>&gt;</span></li>
-                        <li><a href="#">都市/校园/职场</a><span>&gt;</span></li>
-                        <li><a href="#">科幻/未来</a><span>&gt;</span></li>
-                        <li><a href="#">电影/音乐/文学</a><span>&gt;</span></li>
-                        <li><a href="#">历史/考古</a><span>&gt;</span></li>
-                        <li><a href="#">传记/传奇</a></li>
-                        <li><a href="#">战争/谋略</a></li>
-                        <li><a href="#">金融/货币</a><span>&gt;</span></li>
-                        <li><a href="#">财经/管理</a><span>&gt;</span></li>
-                        <li><a href="#">教育/励志</a></li>
-                        <li><a href="#">旅游/探险/野外求生</a><span>&gt;</span></li>
-                        <li><a href="#">工程/技术/编程</a><span>&gt;</span></li>
-                        <li><a href="#">恋爱/结婚/育儿</a><span>&gt;</span></li>
-                    </ul>
+                <div class="location">
+                    <div class="first" id="tab1">
+                        <ul class="clearfix">
+                            <li><a href="#">书籍分类</a></li>
+                            <li><a href="#">言情/玄幻/游戏</a><span>&gt;</span></li>
+                            <li><a href="#">军事/武侠</a><span>&gt;</span></li>
+                            <li><a href="#">都市/校园/职场</a><span>&gt;</span></li>
+                            <li><a href="#">科幻/未来</a><span>&gt;</span></li>
+                            <li><a href="#">电影/音乐/文学</a><span>&gt;</span></li>
+                            <li><a href="#">历史/考古</a><span>&gt;</span></li>
+                            <li><a href="#">传记/传奇</a></li>
+                            <li><a href="#">战争/谋略</a></li>
+                            <li><a href="#">金融/货币</a><span>&gt;</span></li>
+                            <li><a href="#">财经/管理</a><span>&gt;</span></li>
+                            <li><a href="#">教育/励志</a></li>
+                            <li><a href="#">旅游/探险/野外求生</a><span></span></li>
+                            <li><a href="#">工程/技术/编程</a><span>&gt;</span></li>
+                            <li><a href="#">恋爱/结婚/育儿</a><span>&gt;</span></li>
+                        </ul>
+                    </div>
+                    <div class="second" id="tab2">
+                        <ul>
+                            <li>
+                                <ol>
+                                    <li><a href="#">言情/玄幻/游戏</a><span>&gt;</span></li>
+                                    <li><a href="#">军事/武侠</a><span>&gt;</span></li>
+                                    <li><a href="#">都市/校园/职场</a><span>&gt;</span></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol>
+                                    <li><a href="#">言情/玄幻/游戏</a><span>&gt;</span></li>
+                                    <li><a href="#">军事/武侠</a><span>&gt;</span></li>
+                                    <li><a href="#">都市/校园/职场</a><span>&gt;</span></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol>
+                                    <li><a href="#">言情/玄幻/游戏</a><span>&gt;</span></li>
+                                    <li><a href="#">军事/武侠</a><span>&gt;</span></li>
+                                    <li><a href="#">都市/校园/职场</a><span>&gt;</span></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol>
+                                    <li><a href="#">言情/玄幻/游戏</a><span>&gt;</span></li>
+                                    <li><a href="#">军事/武侠</a><span>&gt;</span></li>
+                                    <li><a href="#">都市/校园/职场</a><span>&gt;</span></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol>
+                                    <li><a href="#">言情/玄幻/游戏</a><span>&gt;</span></li>
+                                    <li><a href="#">军事/武侠</a><span>&gt;</span></li>
+                                    <li><a href="#">都市/校园/职场</a><span>&gt;</span></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol>
+                                    <li><a href="#">言情/玄幻/游戏</a><span>&gt;</span></li>
+                                    <li><a href="#">军事/武侠</a><span>&gt;</span></li>
+                                    <li><a href="#">都市/校园/职场</a><span>&gt;</span></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol>
+                                    <li><a href="#">言情/玄幻/游戏</a><span>&gt;</span></li>
+                                    <li><a href="#">军事/武侠</a><span>&gt;</span></li>
+                                    <li><a href="#">都市/校园/职场</a><span>&gt;</span></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol>
+                                    <li><a href="#">言情/玄幻/游戏</a><span>&gt;</span></li>
+                                    <li><a href="#">军事/武侠</a><span>&gt;</span></li>
+                                    <li><a href="#">都市/校园/职场</a><span>&gt;</span></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol>
+                                    <li><a href="#">言情/玄幻/游戏</a><span>&gt;</span></li>
+                                    <li><a href="#">军事/武侠</a><span>&gt;</span></li>
+                                    <li><a href="#">都市/校园/职场</a><span>&gt;</span></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol>
+                                    <li><a href="#">言情/玄幻/游戏</a><span>&gt;</span></li>
+                                    <li><a href="#">军事/武侠</a><span>&gt;</span></li>
+                                    <li><a href="#">都市/校园/职场</a><span>&gt;</span></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol>
+                                    <li><a href="#">言情/玄幻/游戏</a><span>&gt;</span></li>
+                                    <li><a href="#">军事/武侠</a><span>&gt;</span></li>
+                                    <li><a href="#">都市/校园/职场</a><span>&gt;</span></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol>
+                                    <li><a href="#">言情/玄幻/游戏</a><span>&gt;</span></li>
+                                    <li><a href="#">军事/武侠</a><span>&gt;</span></li>
+                                    <li><a href="#">都市/校园/职场</a><span>&gt;</span></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol>
+                                    <li><a href="#">言情/玄幻/游戏</a><span>&gt;</span></li>
+                                    <li><a href="#">军事/武侠</a><span>&gt;</span></li>
+                                    <li><a href="#">都市/校园</a><span>&gt;</span></li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="pop pop1">
                 <dl class="clearfix">
                     <dt>童书</dt>
+                    <dd>凯迪克奖获奖作品</dd>
+                    <dd>纽伯瑞奖获奖作品</dd>
+                    <dd>高铁的秘密</dd>
+                    <dd>读专“鼠”于你的好绘本</dd>
+                    <dd>好想去这样那样的国家</dd>
+                    <dd>童心陶醉的幻想世界</dd>
+                    <dd>新宝驾到</dd>
+                    <dd>模范爸爸是什么样</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>文艺</dt>
+                    <dd>奥斯卡：原著比电影更精彩</dd>
+                    <dd>人民日报2020推荐书单</dd>
+                    <dd>2019年豆瓣年度书单</dd>
+                    <dd>易烊千玺荐书洞察人性！</dd>
+                    <dd>东野圭吾新书</dd>
+                    <dd>教育部推荐必读书目</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>社科</dt>
+                    <dd>历史类人气品牌 “甲骨文丛书”书单</dd>
+                    <dd>历史类精品“汗青堂丛书”书单</dd>
+                    <dd>译文纪实系列书单</dd>
+                    <dd>新知文库精选阅读丛书</dd>
+                    <dd>华文全球史系列书单</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>经管励志</dt>
+                    <dd>读懂2020中国经济书单</dd>
+                    <dd>比尔·盖茨推荐今夏必读5本书</dd>
+                    <dd>抓住股市投资机会</dd>
+                    <dd>瞬间提高个人修养的10部经典</dd>
+                    <dd>影视同期原著书单</dd>
+                    <dd>月薪不足3w你要读的书</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>生活</dt>
+                    <dd>生活有一种绝望，叫陪孩子写作业</dd>
+                    <dd>Lonely Planet2020世界旅行目的地榜单</dd>
+                    <dd>幼小衔接，孩子要上一年级，妈妈如何不焦虑？</dd>
+                    <dd>樊登推荐书单：家庭教育的秘密</dd>
+                    <dd>备孕需要了解的二三事</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>科技</dt>
+                    <dd>2020学习代码必读书单</dd>
+                    <dd>诺贝尔&普利策奖作者科普书单</dd>
+                    <dd>斯蒂芬·霍金图书全集</dd>
+                    <dd>"爱因斯坦-上帝是不掷骰子的”--量子物理学推荐书单</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>教育</dt>
+                    <dd>精明家长给孩子选好书</dd>
+                    <dd>一年级书单</dd>
+                    <dd>二年级书单</dd>
+                    <dd>三年级书单</dd>
+                    <dd>告诉你写好作文的秘密</dd>
+                    <dd>老师不会教的学习方法</dd>
+                    <dd>适合背诵的国学启蒙书</dd>
+                </dl>
+            </div>
+            <div class="pop pop2">
+                <dl class="clearfix">
+                    <dt>特价</dt>
+                    <dd>凯迪克奖获奖作品</dd>
+                    <dd>纽伯瑞奖获奖作品</dd>
+                    <dd>高铁的秘密</dd>
+                    <dd>读专“鼠”于你的好绘本</dd>
+                    <dd>好想去这样那样的国家</dd>
+                    <dd>童心陶醉的幻想世界</dd>
+                    <dd>新宝驾到</dd>
+                    <dd>模范爸爸是什么样</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>文艺</dt>
+                    <dd>奥斯卡：原著比电影更精彩</dd>
+                    <dd>人民日报2020推荐书单</dd>
+                    <dd>2019年豆瓣年度书单</dd>
+                    <dd>易烊千玺荐书洞察人性！</dd>
+                    <dd>东野圭吾新书</dd>
+                    <dd>教育部推荐必读书目</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>社科</dt>
+                    <dd>历史类人气品牌 “甲骨文丛书”书单</dd>
+                    <dd>历史类精品“汗青堂丛书”书单</dd>
+                    <dd>译文纪实系列书单</dd>
+                    <dd>新知文库精选阅读丛书</dd>
+                    <dd>华文全球史系列书单</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>经管励志</dt>
+                    <dd>读懂2020中国经济书单</dd>
+                    <dd>比尔·盖茨推荐今夏必读5本书</dd>
+                    <dd>抓住股市投资机会</dd>
+                    <dd>瞬间提高个人修养的10部经典</dd>
+                    <dd>影视同期原著书单</dd>
+                    <dd>月薪不足3w你要读的书</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>生活</dt>
+                    <dd>生活有一种绝望，叫陪孩子写作业</dd>
+                    <dd>Lonely Planet2020世界旅行目的地榜单</dd>
+                    <dd>幼小衔接，孩子要上一年级，妈妈如何不焦虑？</dd>
+                    <dd>樊登推荐书单：家庭教育的秘密</dd>
+                    <dd>备孕需要了解的二三事</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>科技</dt>
+                    <dd>2020学习代码必读书单</dd>
+                    <dd>诺贝尔&普利策奖作者科普书单</dd>
+                    <dd>斯蒂芬·霍金图书全集</dd>
+                    <dd>"爱因斯坦-上帝是不掷骰子的”--量子物理学推荐书单</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>教育</dt>
+                    <dd>精明家长给孩子选好书</dd>
+                    <dd>一年级书单</dd>
+                    <dd>二年级书单</dd>
+                    <dd>三年级书单</dd>
+                    <dd>告诉你写好作文的秘密</dd>
+                    <dd>老师不会教的学习方法</dd>
+                    <dd>适合背诵的国学启蒙书</dd>
+                </dl>
+            </div>
+            <div class="pop pop3">
+                <dl class="clearfix">
+                    <dt>教材</dt>
+                    <dd>凯迪克奖获奖作品</dd>
+                    <dd>纽伯瑞奖获奖作品</dd>
+                    <dd>高铁的秘密</dd>
+                    <dd>读专“鼠”于你的好绘本</dd>
+                    <dd>好想去这样那样的国家</dd>
+                    <dd>童心陶醉的幻想世界</dd>
+                    <dd>新宝驾到</dd>
+                    <dd>模范爸爸是什么样</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>文艺</dt>
+                    <dd>奥斯卡：原著比电影更精彩</dd>
+                    <dd>人民日报2020推荐书单</dd>
+                    <dd>2019年豆瓣年度书单</dd>
+                    <dd>易烊千玺荐书洞察人性！</dd>
+                    <dd>东野圭吾新书</dd>
+                    <dd>教育部推荐必读书目</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>社科</dt>
+                    <dd>历史类人气品牌 “甲骨文丛书”书单</dd>
+                    <dd>历史类精品“汗青堂丛书”书单</dd>
+                    <dd>译文纪实系列书单</dd>
+                    <dd>新知文库精选阅读丛书</dd>
+                    <dd>华文全球史系列书单</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>经管励志</dt>
+                    <dd>读懂2020中国经济书单</dd>
+                    <dd>比尔·盖茨推荐今夏必读5本书</dd>
+                    <dd>抓住股市投资机会</dd>
+                    <dd>瞬间提高个人修养的10部经典</dd>
+                    <dd>影视同期原著书单</dd>
+                    <dd>月薪不足3w你要读的书</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>生活</dt>
+                    <dd>生活有一种绝望，叫陪孩子写作业</dd>
+                    <dd>Lonely Planet2020世界旅行目的地榜单</dd>
+                    <dd>幼小衔接，孩子要上一年级，妈妈如何不焦虑？</dd>
+                    <dd>樊登推荐书单：家庭教育的秘密</dd>
+                    <dd>备孕需要了解的二三事</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>科技</dt>
+                    <dd>2020学习代码必读书单</dd>
+                    <dd>诺贝尔&普利策奖作者科普书单</dd>
+                    <dd>斯蒂芬·霍金图书全集</dd>
+                    <dd>"爱因斯坦-上帝是不掷骰子的”--量子物理学推荐书单</dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>教育</dt>
+                    <dd>精明家长给孩子选好书</dd>
+                    <dd>一年级书单</dd>
+                    <dd>二年级书单</dd>
+                    <dd>三年级书单</dd>
+                    <dd>告诉你写好作文的秘密</dd>
+                    <dd>老师不会教的学习方法</dd>
+                    <dd>适合背诵的国学启蒙书</dd>
+                </dl>
+            </div>
+            <div class="pop pop4">
+                <dl class="clearfix">
+                    <dt>小说</dt>
                     <dd>凯迪克奖获奖作品</dd>
                     <dd>纽伯瑞奖获奖作品</dd>
                     <dd>高铁的秘密</dd>
@@ -183,7 +523,7 @@
                 </div>
                 <div class="newbooks">
                     <div class="swiper-container swiper2">
-                        <div class="swiper-wrapper">
+                        <div class="swiper-wrapper" id="detail">
                             <div class="swiper-slide">
                                 <ul>
                                     <li>
@@ -656,117 +996,431 @@
 
     <div class="unique clearfix ">
         <div class="left ">
-            <b>独</b>
-            <h1>家特供
-                <span class="firstone ">主打</span>
-                <span>童书1</span>
-                <span>童书2</span>
-                <span>文艺</span>
-                <span>小说</span>
-                <span>青春励志</span>
-                <span>社科</span>
-                <span>经管</span>
-                <span>生活</span>
-                <span>教育</span>
-                <span>电子书</span>
-            </h1>
-            <div class="list list1 ">
-                <ul class="clearfix ">
-                    <li class="leftdist ">
-                        <img src="../img/d1.jpg " alt=" ">
-                        <dl>
-                            <dt>高情商表达</dt>
-                            <dd>当当独家特供</dd>
-                            <dd><span>¥11.60</span><span class="rightfloat ">¥29.80</span></dd>
-                        </dl>
+            <div class="nav-bar clearfix">
+                <b>独</b>
+                <h1><i>家特供</i>
+                    <span class="firstone ">主打</span>
+                    <span class="san">童书1</span>
+                    <span class="san">童书2</span>
+                    <span>文艺</span>
+                    <span>小说</span>
+                    <span class="si">青春励志</span>
+                    <span>社科</span>
+                    <span>经管</span>
+                    <span>生活</span>
+                    <span>教育</span>
+                    <span>电子书</span>
+                </h1>
+            </div>
+            <div class="content">
+                <ul>
+                    <li class="one">
+                        <div class="list list1 ">
+                            <ul class="clearfix ">
+                                <li class="leftdist ">
+                                    <img src="../img/d1.jpg " alt=" ">
+                                    <dl>
+                                        <dt>高情商表达</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd><span>¥11.60</span><span class="rightfloat ">¥29.80</span></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d2.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d3.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d4.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d5.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li class="leftdist ">
+                                    <img src="../img/d6.jpg " alt=" ">
+                                    <dl>
+                                        <dt>高情商表达</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd><span>¥11.60</span><span class="rightfloat ">¥29.80</span></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d7.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d8.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d9.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d10.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
-                    <li>
-                        <img src="../img/d2.jpg " alt=" ">
-                        <dl>
-                            <dt>唐诗里的烟火人间</dt>
-                            <dd>当当独家特供</dd>
-                            <dd class="clearfix ">
-                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
-                            <dd>电子书￥24.00</dd>
-                        </dl>
+                    <li class="two">
+                        <div class="list list1 ">
+                            <ul class="clearfix ">
+                                <li class="leftdist ">
+                                    <img src="../img/d1.jpg " alt=" ">
+                                    <dl>
+                                        <dt>高情商表达</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd><span>¥11.60</span><span class="rightfloat ">¥29.80</span></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d2.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d3.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d4.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d5.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li class="leftdist ">
+                                    <img src="../img/d6.jpg " alt=" ">
+                                    <dl>
+                                        <dt>高情商表达</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd><span>¥11.60</span><span class="rightfloat ">¥29.80</span></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d7.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d8.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d9.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d10.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
-                    <li>
-                        <img src="../img/d3.jpg " alt=" ">
-                        <dl>
-                            <dt>唐诗里的烟火人间</dt>
-                            <dd>当当独家特供</dd>
-                            <dd class="clearfix ">
-                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
-                            <dd>电子书￥24.00</dd>
-                        </dl>
+                    <li class="three">
+                        <div class="list list1 ">
+                            <ul class="clearfix ">
+                                <li class="leftdist ">
+                                    <img src="../img/d1.jpg " alt=" ">
+                                    <dl>
+                                        <dt>高情商表达</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd><span>¥11.60</span><span class="rightfloat ">¥29.80</span></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d2.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d3.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d4.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d5.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li class="leftdist ">
+                                    <img src="../img/d6.jpg " alt=" ">
+                                    <dl>
+                                        <dt>高情商表达</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd><span>¥11.60</span><span class="rightfloat ">¥29.80</span></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d7.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d8.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d9.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d10.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
-                    <li>
-                        <img src="../img/d4.jpg " alt=" ">
-                        <dl>
-                            <dt>唐诗里的烟火人间</dt>
-                            <dd>当当独家特供</dd>
-                            <dd class="clearfix ">
-                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
-                            <dd>电子书￥24.00</dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <img src="../img/d5.jpg " alt=" ">
-                        <dl>
-                            <dt>唐诗里的烟火人间</dt>
-                            <dd>当当独家特供</dd>
-                            <dd class="clearfix ">
-                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
-                            <dd>电子书￥24.00</dd>
-                        </dl>
-                    </li>
-                    <li class="leftdist ">
-                        <img src="../img/d6.jpg " alt=" ">
-                        <dl>
-                            <dt>高情商表达</dt>
-                            <dd>当当独家特供</dd>
-                            <dd><span>¥11.60</span><span class="rightfloat ">¥29.80</span></dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <img src="../img/d7.jpg " alt=" ">
-                        <dl>
-                            <dt>唐诗里的烟火人间</dt>
-                            <dd>当当独家特供</dd>
-                            <dd class="clearfix ">
-                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
-                            <dd>电子书￥24.00</dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <img src="../img/d8.jpg " alt=" ">
-                        <dl>
-                            <dt>唐诗里的烟火人间</dt>
-                            <dd>当当独家特供</dd>
-                            <dd class="clearfix ">
-                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
-                            <dd>电子书￥24.00</dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <img src="../img/d9.jpg " alt=" ">
-                        <dl>
-                            <dt>唐诗里的烟火人间</dt>
-                            <dd>当当独家特供</dd>
-                            <dd class="clearfix ">
-                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
-                            <dd>电子书￥24.00</dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <img src="../img/d10.jpg " alt=" ">
-                        <dl>
-                            <dt>唐诗里的烟火人间</dt>
-                            <dd>当当独家特供</dd>
-                            <dd class="clearfix ">
-                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
-                            <dd>电子书￥24.00</dd>
-                        </dl>
+                    <li class="four">
+                        <div class="list list1 ">
+                            <ul class="clearfix ">
+                                <li class="leftdist ">
+                                    <img src="../img/d1.jpg " alt=" ">
+                                    <dl>
+                                        <dt>高情商表达</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd><span>¥11.60</span><span class="rightfloat ">¥29.80</span></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d2.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d3.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d4.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d5.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li class="leftdist ">
+                                    <img src="../img/d6.jpg " alt=" ">
+                                    <dl>
+                                        <dt>高情商表达</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd><span>¥11.60</span><span class="rightfloat ">¥29.80</span></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d7.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d8.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d9.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <img src="../img/d10.jpg " alt=" ">
+                                    <dl>
+                                        <dt>唐诗里的烟火人间</dt>
+                                        <dd>当当独家特供</dd>
+                                        <dd class="clearfix ">
+                                            <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                        <dd>电子书￥24.00</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -968,6 +1622,8 @@
                 </ol>
             </div>
         </div>
+
+
     </div>
 
     <div class="package clearfix">
@@ -1526,155 +2182,447 @@
     </div>
 
     <!-- guess you like -->
-    <div class="guess ">
-      <div class="nav-bar">
-        <b>猜</b>
-        <h1>你喜欢
-            <a href=""><i class="iconfont">&#xe646;换一批</i></a>
-        </h1>
-      </div>
-      <div clearfix >
-        <div class="left ">
-            <div class="list list1 ">
-                <ul class="clearfix ">
-                    <li class="leftdist ">
-                        <img src="../img/d1.jpg " alt=" ">
-                        <dl>
-                            <dt>高情商表达</dt>
-                            <dd>当当独家特供</dd>
-                            <dd><span>¥11.60</span><span class="rightfloat ">¥29.80</span></dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <img src="../img/d2.jpg " alt=" ">
-                        <dl>
-                            <dt>唐诗里的烟火人间</dt>
-                            <dd>当当独家特供</dd>
-                            <dd class="clearfix ">
-                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
-                            <dd>电子书￥24.00</dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <img src="../img/d3.jpg " alt=" ">
-                        <dl>
-                            <dt>唐诗里的烟火人间</dt>
-                            <dd>当当独家特供</dd>
-                            <dd class="clearfix ">
-                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
-                            <dd>电子书￥24.00</dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <img src="../img/d4.jpg " alt=" ">
-                        <dl>
-                            <dt>唐诗里的烟火人间</dt>
-                            <dd>当当独家特供</dd>
-                            <dd class="clearfix ">
-                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
-                            <dd>电子书￥24.00</dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <img src="../img/d5.jpg " alt=" ">
-                        <dl>
-                            <dt>唐诗里的烟火人间</dt>
-                            <dd>当当独家特供</dd>
-                            <dd class="clearfix ">
-                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
-                            <dd>电子书￥24.00</dd>
-                        </dl>
-                    </li>
-                    <li class="leftdist ">
-                        <img src="../img/d6.jpg " alt=" ">
-                        <dl>
-                            <dt>高情商表达</dt>
-                            <dd>当当独家特供</dd>
-                            <dd><span>¥11.60</span><span class="rightfloat ">¥29.80</span></dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <img src="../img/d7.jpg " alt=" ">
-                        <dl>
-                            <dt>唐诗里的烟火人间</dt>
-                            <dd>当当独家特供</dd>
-                            <dd class="clearfix ">
-                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
-                            <dd>电子书￥24.00</dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <img src="../img/d8.jpg " alt=" ">
-                        <dl>
-                            <dt>唐诗里的烟火人间</dt>
-                            <dd>当当独家特供</dd>
-                            <dd class="clearfix ">
-                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
-                            <dd>电子书￥24.00</dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <img src="../img/d9.jpg " alt=" ">
-                        <dl>
-                            <dt>唐诗里的烟火人间</dt>
-                            <dd>当当独家特供</dd>
-                            <dd class="clearfix ">
-                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
-                            <dd>电子书￥24.00</dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <img src="../img/d10.jpg " alt=" ">
-                        <dl>
-                            <dt>唐诗里的烟火人间</dt>
-                            <dd>当当独家特供</dd>
-                            <dd class="clearfix ">
-                                <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
-                            <dd>电子书￥24.00</dd>
-                        </dl>
-                    </li>
+    <div class="guess clearfix">
+        <div class="nav-bar clearfix">
+            <b>猜</b>
+            <h1>你喜欢
+                <a href=""><i class="iconfont">&#xe646;换一批</i></a>
+            </h1>
+        </div>
+        <div clearfix>
+            <div class="left ">
+                <div class="list list1 ">
+                    <ul class="clearfix ">
+                        <li class="leftdist ">
+                            <img src="../img/d1.jpg " alt=" ">
+                            <dl>
+                                <dt>高情商表达</dt>
+                                <dd>当当独家特供</dd>
+                                <dd><span>¥11.60</span><span class="rightfloat ">¥29.80</span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="../img/d2.jpg " alt=" ">
+                            <dl>
+                                <dt>唐诗里的烟火人间</dt>
+                                <dd>当当独家特供</dd>
+                                <dd class="clearfix ">
+                                    <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                <dd>电子书￥24.00</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="../img/d3.jpg " alt=" ">
+                            <dl>
+                                <dt>唐诗里的烟火人间</dt>
+                                <dd>当当独家特供</dd>
+                                <dd class="clearfix ">
+                                    <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                <dd>电子书￥24.00</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="../img/d4.jpg " alt=" ">
+                            <dl>
+                                <dt>唐诗里的烟火人间</dt>
+                                <dd>当当独家特供</dd>
+                                <dd class="clearfix ">
+                                    <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                <dd>电子书￥24.00</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="../img/d5.jpg " alt=" ">
+                            <dl>
+                                <dt>唐诗里的烟火人间</dt>
+                                <dd>当当独家特供</dd>
+                                <dd class="clearfix ">
+                                    <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                <dd>电子书￥24.00</dd>
+                            </dl>
+                        </li>
+                        <li class="leftdist ">
+                            <img src="../img/d6.jpg " alt=" ">
+                            <dl>
+                                <dt>高情商表达</dt>
+                                <dd>当当独家特供</dd>
+                                <dd><span>¥11.60</span><span class="rightfloat ">¥29.80</span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="../img/d7.jpg " alt=" ">
+                            <dl>
+                                <dt>唐诗里的烟火人间</dt>
+                                <dd>当当独家特供</dd>
+                                <dd class="clearfix ">
+                                    <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                <dd>电子书￥24.00</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="../img/d8.jpg " alt=" ">
+                            <dl>
+                                <dt>唐诗里的烟火人间</dt>
+                                <dd>当当独家特供</dd>
+                                <dd class="clearfix ">
+                                    <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                <dd>电子书￥24.00</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="../img/d9.jpg " alt=" ">
+                            <dl>
+                                <dt>唐诗里的烟火人间</dt>
+                                <dd>当当独家特供</dd>
+                                <dd class="clearfix ">
+                                    <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                <dd>电子书￥24.00</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="../img/d10.jpg " alt=" ">
+                            <dl>
+                                <dt>唐诗里的烟火人间</dt>
+                                <dd>当当独家特供</dd>
+                                <dd class="clearfix ">
+                                    <span>¥21.60</span><span class="rightfloat ">¥48.00</span></dd>
+                                <dd>电子书￥24.00</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right ">
+                <h2>你可能喜欢的作家</h2>
+                <ul class="clearfix">
+                    <li>余华 </li>
+                    <li>路遥 </li>
+                    <li>村上春</li>
+                    <li>赵伟 </li>
+                    <li>德鲁克</li>
+                    <li>稻盛和</li>
+                    <li>东野圭</li>
+                    <li>沃森 </li>
+                    <li>南派三</li>
+                    <li>何马 </li>
                 </ul>
             </div>
         </div>
-        <div class="right ">
-            <h2>你可能喜欢的作家</h2>
-            <ul class="clearfix">
-                <li>余华 </li>
-                <li>路遥 </li>
-                <li>村上春</li>
-                <li>赵伟 </li>
-                <li>德鲁克</li>
-                <li>稻盛和</li>
-                <li>东野圭</li>
-                <li>沃森 </li>
-                <li>南派三</li>
-                <li>何马 </li>
-            </ul>
+    </div>
+    <!--读者 -->
+    <div class="reader clearfix ">
+        <div class="nav-bar clearfix">
+            <b>读</b>
+            <h1>者推荐
+                <span class="firstone ">好评最多</span>
+                <span>最受关注</span>
+                <span>人气收藏</span>
+            </h1>
+        </div>
+        <div class="left ">
+            <div class="top">
+                <ul>
+                    <li class="first clearfix">
+                        <h2>1</h2>
+                        <div class="img"><img src="../img/r1.jpg" alt=""></div>
+                        <div class="txt">
+                            <a href="#">迷案鉴赏 </a>
+                            <p><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i></p>
+                            <p class="price clearfix"><span>当当价：¥36.00</span><b>市场价：¥49.80</b></p>
+                            <p class="paragraph">码头工人姜尼·桑托罗杀害女友案成了芝加哥头条新闻。大多数芝加哥人都觉得他有罪，艾利却发现了桑托罗不在现场的铁证。此后艾利的日子开始不得安宁：不仅被一辆可疑的汽车跟踪，芝加哥的黑帮大佬也来逼她置身事外，甚至FBI也来调查她</p>
+                        </div>
+                    </li>
+                    <li class="second clearfix">
+                        <h2>1</h2>
+                        <div class="img"><img src="../img/r1.jpg" alt=""></div>
+                        <div class="txt">
+                            <a href="#">迷案鉴赏 </a>
+                            <p><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i></p>
+                            <p class="price"><span>当当价：¥36.00</span><b>市场价：¥49.80</b></p>
+                            <p class="paragraph">码头工人姜尼·桑托罗杀害女友案成了芝加哥头条新闻。大多数芝加哥人都觉得他有罪，艾利却发现了桑托罗不在现场的铁证。此后艾利的日子开始不得安宁：不仅被一辆可疑的汽车跟踪，芝加哥的黑帮大佬也来逼她置身事外，甚至FBI也来调查她</p>
+                        </div>
+                    </li>
+                    <li class="third clearfix">
+                        <h2>1</h2>
+                        <div class="img"><img src="../img/r1.jpg" alt=""></div>
+                        <div class="txt">
+                            <a href="#">迷案鉴赏 </a>
+                            <p><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i></p>
+                            <p class="price clearfix"><span>当当价：¥36.00</span><b>市场价：¥49.80</b></p>
+                            <p class="paragraph">码头工人姜尼·桑托罗杀害女友案成了芝加哥头条新闻。大多数芝加哥人都觉得他有罪，艾利却发现了桑托罗不在现场的铁证。此后艾利的日子开始不得安宁：不仅被一辆可疑的汽车跟踪，芝加哥的黑帮大佬也来逼她置身事外，甚至FBI也来调查她</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
+            <div class="low">
+                <ul class="clearfix">
+                    <li>
+                        <h1>2</h1>
+                        <img src="../img/r2.jpg" alt="">
+                        <p>你的善良必须有点锋</p>
+                        <p><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i></p>
+                        <p><span>¥13.20</span><b>¥32.80</b></p>
+                        <p>电子书¥3.00</p>
+                    </li>
+                    <li>
+                        <h1>3</h1>
+                        <img src="../img/r3.jpg" alt="">
+                        <p>你的善良必须有点锋</p>
+                        <p><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i></p>
+                        <p><span>¥13.20</span><b>¥32.80</b></p>
+                        <p>电子书¥3.00</p>
+                    </li>
+                    <li>
+                        <h1>4</h1>
+                        <img src="../img/r4.jpg" alt="">
+                        <p>你的善良必须有点锋</p>
+                        <p><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i></p>
+                        <p><span>¥13.20</span><b>¥32.80</b></p>
+                        <p>电子书¥3.00</p>
+                    </li>
+                    <li>
+                        <h1>5</h1>
+                        <img src="../img/r5.jpg" alt="">
+                        <p>你的善良必须有点锋</p>
+                        <p><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i></p>
+                        <p><span>¥13.20</span><b>¥32.80</b></p>
+                        <p>电子书¥3.00</p>
+                    </li>
+                    <li>
+                        <h1>6</h1>
+                        <img src="../img/r6.jpg" alt="">
+                        <p>你的善良必须有点锋</p>
+                        <p><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i><i class="iconfont">&#xe60d;</i></p>
+                        <p><span>¥13.20</span><b>¥32.80</b></p>
+                        <p>电子书¥3.00</p>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+        <div class="right">
+            <h2><a href="#">当当读书社区</a></h2>
+            <h3><a href="#">赛雷三分钟漫画中国史</a></h3>
+            <h4><a href="#">超有趣全球漫画史</a></h4>
+            <div><img src="../img/m.jpg" alt=""></div>
+            <p><a href="#">以大家习惯的时间线索来刻画中国史，赛雷第二本漫画中国史包含西汉、东汉和三国三个大的历史时期，每一段历史时期都抓住大的历史事件，以赛雷的爆笑风格来刻画人物和事件，几乎每页都有让人会心一笑的梗，让人在哈哈哈大笑中通晓中国历史的脉络以及关键事</a></p>
+            <i class="clearfix"><a href="#">电子书</a><a href="#">客户端</a></i>
         </div>
     </div>
-    <div class="reader clearfix ">
-        <div class="left ">
-            <b>独</b>
-            <h1>家特供
-                <span class="firstone ">主打</span>
-                <span>童书1</span>
-                <span>童书2</span>
-                <span>文艺</span>
-                <span>小说</span>
-                <span>青春励志</span>
-                <span>社科</span>
-                <span>经管</span>
-                <span>生活</span>
-                <span>教育</span>
-                <span>电子书</span>
-            </h1>
+    <!-- reduce -->
+    <div class="reduce clearfix">
+        <ul>
+            <li class="miaosha txt">
+                <p></p>
+            </li>
+            <li>
+                <a href=""><img src="../img/j2.jpg" alt=""></a>
+                <p><a href=""><span>2.9折</span><b>人间失格（太宰治失望的）</b></a></p>
+            </li>
+            <li>
+                <a href=""><img src="../img/j3.jpg" alt=""></a>
+                <p><a href=""><span>2.9折</span><b>人间失格（太宰治失望的）</b></a></p>
+            </li>
+            <li>
+                <a href=""><img src="../img/j4.jpg" alt=""></a>
+                <p><a href=""><span>2.9折</span><b>人间失格（太宰治失望的）</b></a></p>
+            </li>
+            <li>
+                <a href=""><img src="../img/j5.jpg" alt=""></a>
+                <p><a href=""><span>2.9折</span><b>人间失格（太宰治失望的）</b></a></p>
+            </li>
+            <li>
+                <a href=""><img src="../img/j6.jpg" alt=""></a>
+                <p><a href=""><span>2.9折</span><b>人间失格（太宰治失望的）</b></a></p>
+            </li>
+            <li class="txt shuang">
+                <p></p>
+            </li>
+            <li>
+                <a href=""><img src="../img/j2.jpg" alt=""></a>
+                <p><a href=""><span>2.9折</span><b>人间失格（太宰治失望的）</b></a></p>
+            </li>
+            <li>
+                <a href=""><img src="../img/j3.jpg" alt=""></a>
+                <p><a href=""><span>2.9折</span><b>人间失格（太宰治失望的）</b></a></p>
+            </li>
+            <li>
+                <a href=""><img src="../img/j4.jpg" alt=""></a>
+                <p><a href=""><span>2.9折</span><b>人间失格（太宰治失望的）</b></a></p>
+            </li>
+            <li>
+                <a href=""><img src="../img/j5.jpg" alt=""></a>
+                <p><a href=""><span>2.9折</span><b>人间失格（太宰治失望的）</b></a></p>
+            </li>
+            <li>
+                <a href=""><img src="../img/j6.jpg" alt=""></a>
+                <p><a href=""><span>2.9折</span><b>人间失格（太宰治失望的）</b></a></p>
+            </li>
+            <li class="txt xianshi">
+                <h2></h2>
+                <p><span></span><span></span><span></span></p>
+            </li>
+            <li>
+                <a href=""><img src="../img/j2.jpg" alt=""></a>
+                <p><a href=""><span>2.9折</span><b>人间失格（太宰治失望的）</b></a></p>
+            </li>
+            <li>
+                <a href=""><img src="../img/j3.jpg" alt=""></a>
+                <p><a href=""><span>2.9折</span><b>人间失格（太宰治失望的）</b></a></p>
+            </li>
+            <li>
+                <a href=""><img src="../img/j4.jpg" alt=""></a>
+                <p><a href=""><span>2.9折</span><b>人间失格（太宰治失望的）</b></a></p>
+            </li>
+            <li>
+                <a href=""><img src="../img/j5.jpg" alt=""></a>
+                <p><a href=""><span>2.9折</span><b>人间失格（太宰治失望的）</b></a></p>
+            </li>
+            <li>
+                <a href=""><img src="../img/j6.jpg" alt=""></a>
+                <p><a href=""><span>2.9折</span><b>人间失格（太宰治失望的）</b></a></p>
+            </li>
+            <li class="txt">
+                <a href=""><img src="../img/j1.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href=""><img src="../img/j2.jpg" alt=""></a>
+                <p><a href=""><span>2.9折</span><b>人间失格（太宰治失望的）</b></a></p>
+            </li>
+            <li>
+                <a href=""><img src="../img/j3.jpg" alt=""></a>
+                <p><a href=""><span>2.9折</span><b>人间失格（太宰治失望的）</b></a></p>
+            </li>
+            <li>
+                <a href=""><img src="../img/j4.jpg" alt=""></a>
+                <p><a href=""><span>2.9折</span><b>人间失格（太宰治失望的）</b></a></p>
+            </li>
+            <li>
+                <a href=""><img src="../img/j5.jpg" alt=""></a>
+                <p><a href=""><span>2.9折</span><b>人间失格（太宰治失望的）</b></a></p>
+            </li>
+            <li>
+                <a href=""><img src="../img/j6.jpg" alt=""></a>
+                <p><a href=""><span>2.9折</span><b>人间失格（太宰治失望的）</b></a></p>
+            </li>
+        </ul>
+    </div>
+    <div class="nav-foot">
+        <div class="nav-foot-main">
+            <ul class="clearfix">
+                <li>
+                    <a href=""></a>
+                </li>
+                <li>
+                    <a href=""></a>
+                </li>
+                <li>
+                    <a href=""></a>
+                </li>
+                <li>
+                    <a href=""></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <ul class="clearfix">
+            <li>
+                <dl>
+                    <dt><a href="#">购物指南</a></dt>
+                    <dd><a href="#">购物流程</a></dd>
+                    <dd><a href="#">发票制度</a></dd>
+                    <dd><a href="#">服务协议</a></dd>
+                    <dd><a href="#">会员优惠</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt><a href="#">支付方式</a></dt>
+                    <dd><a href="#">网上支付</a></dd>
+                    <dd><a href="#">礼品卡支付</a></dd>
+                    <dd><a href="#">银行转帐</a></dd>
+                    <dd><a href="#">礼券支付</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt><a href="#">订单服务</a></dt>
+                    <dd><a href="#">配送服务查询</a></dd>
+                    <dd><a href="#">订单状态说明</a></dd>
+                    <dd><a href="#">自助取消订单</a></dd>
+                    <dd><a href="#">自助修改订单</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt><a href="#">配送方式</a></dt>
+                    <dd><a href="#">当日递</a></dd>
+                    <dd><a href="#">次日达</a></dd>
+                    <dd><a href="#">订单自提</a></dd>
+                    <dd><a href="#">验货与签收</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt><a href="#">退换货</a></dt>
+                    <dd><a href="#">退换货服务查询</a></dd>
+                    <dd><a href="#">自助申请退换货</a></dd>
+                    <dd><a href="#">退换货进度查询</a></dd>
+                    <dd><a href="#">退款方式和时间</a></dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt><a href="#">商家服务</a></dt>
+                    <dd><a href="#">商家中心</a></dd>
+                    <dd><a href="#">运营服务</a></dd>
+                    <dd><a href="#">加入尾品汇</a></dd>
+                </dl>
+            </li>
+        </ul>
+        <div class="foot-bar">
+            <ul class="clearfix">
+                <li><a href="">公司简介</a></li>
+                <li><a href="">诚聘英才</a></li>
+                <li><a href="">网站联盟</a></li>
+                <li><a href="">当当招商</a></li>
+                <li><a href="">机构销售</a></li>
+                <li><a href="">手机当当</a></li>
+                <li><a href="">官方 Blog </a></li>
+                <li><a href="">热词搜索</a></li>
+            </ul>
+        </div>
+        <div class="foot-nav">
+            <ul clear="clearfix">
+                <li>
+                    <p> © 2004 - 2020 当当网. All Rights Reserved<img src="../img/jing.gif">京ICP证041189号</p>
+                </li>
+                <li class="txt">
+                    <p>出版物经营许可证 新出发京批字第直0673号</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="ticket">
+            <div class="top">
+                <img src="../img/q.jpg" alt="">
             </div>
-       </div>
+            <div class="scqr">
+                <ul>
+                    <li><img src="../img/q1.jpg" alt=""></li>
+                    <li><img src="../img/q3.jpg" alt=""><img src="../img/q4.jpg" alt=""></li>
+                </ul>
+            </div>
+            <div class="low"><img src="../img/q2.jpg" alt=""></div>
+            <div class="back">
+                <p><i class="iconfont">&#xe85b;</i></p>
+                <p>回到顶部</p>
+            </div>
+        </div>
 
-
-
-
+    </footer>
     <script src="../js/index.js "></script>
 </body>
 
